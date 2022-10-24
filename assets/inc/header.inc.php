@@ -78,20 +78,37 @@ if (!empty($marketing['data']['hubspot'])) { ?>
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/<?= $marketing['data']['hubspot'] ?>.js"></script>
     <!-- End of HubSpot Embed Code -->
 <?php } ?>
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/css/normalize.css">
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/css/font-awesome.min.css">
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/css/bootstrap.min.css">
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/css/line-awesome.min.css">
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/css/magnific-popup.css">
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/css/animate.css">
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/css/slick.css">
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/css/owl.carousel.min.css">
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/css/jquery.nice-number.css">
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/css/mean-menu.css">
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/css/default.css">
-<link rel="stylesheet" href="<?= URL ?>/assets/theme/style.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!--styles theme -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<!-- fontawesome css link -->
+<link rel="stylesheet" href="<?= URL ?>/assets/theme/assets/css/fontawesome-all.min.css">
+<!-- bootstrap css link -->
+<link rel="stylesheet" href="<?= URL ?>/assets/theme/assets/css/bootstrap.min.css">
+<!-- favicon -->
+<link rel="shortcut icon" href="<?= URL ?>/assets/theme/assets/images/fav.png" type="image/x-icon">
+<!-- swipper css link -->
+<link rel="stylesheet" href="<?= URL ?>/assets/theme/assets/css/swiper.min.css">
+<!-- lightcase css links -->
+<link rel="stylesheet" href="<?= URL ?>/assets/theme/assets/css/lightcase.css">
+<!-- odometer css link -->
+<link rel="stylesheet" href="<?= URL ?>/assets/theme/assets/css/odometer.css">
+<!-- line-awesome-icon css -->
+<link rel="stylesheet" href="<?= URL ?>/assets/theme/assets/css/icomoon.css">
+<!-- line-awesome-icon css -->
+<link rel="stylesheet" href="<?= URL ?>/assets/theme/assets/css/line-awesome.min.css">
+<!-- animate.css -->
+<link rel="stylesheet" href="<?= URL ?>/assets/theme/assets/css/animate.css">
+<!-- aos.css -->
+<link rel="stylesheet" href="<?= URL ?>/assets/theme/assets/css/aos.css">
+<!-- nice select css -->
+<link rel="stylesheet" href="<?= URL ?>/assets/theme/assets/css/nice-select.css">
+<!-- main style css link -->
+<link rel="stylesheet" href="<?= URL ?>/assets/theme/assets/css/style.css">
+<!-- end styles -->
 
 <!-- Styles CMS -->
 <link rel="stylesheet" href="<?= URL ?>/assets/css/main-rocha.css">

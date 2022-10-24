@@ -97,7 +97,7 @@ class TemplateSite
         $this->head();
         include 'assets/inc/header.inc.php';
         echo '</head>';
-        echo '<body data-url="' . URL . '" class="' . $this->body . '">';
+        echo '<body>';
         // echo '<div class="page-wrapper">';
         include 'assets/inc/nav.inc.php';
     }
