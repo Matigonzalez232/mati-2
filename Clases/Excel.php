@@ -138,10 +138,16 @@ class Excel
                 $join = '';
             }
             $sql = "SELECT productos.$attr FROM `productos` $join WHERE `productos`.`idioma` = '$idioma' ORDER BY `productos`.`idioma`,`productos`.`cod_producto` ASC";
+
+            echo $sql;
+            
             $pdo = $this->con->conPDO()->query($sql);
             $products = $pdo->fetchAll();
 
             $count =  2;
+
+            var_dump($products);
+
             foreach ($products as $product) {
                 $letter = 'A';
                 foreach ($product as $key => $value) {
@@ -151,6 +157,8 @@ class Excel
                 }
                 $count++;
             }
+
+
             $sheet->getActiveSheet(0)->getColumnDimension('A')->setAutoSize(true);
             $writer = IOFactory::createWriter($sheet, 'Xlsx');
             $writer->save($finalPath);
