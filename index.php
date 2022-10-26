@@ -39,6 +39,9 @@ $inicio_nosotros_somos = $contenidos->list(["filter" => ['contenidos.cod = "08f0
 $inicio_introduccion = $contenidos->list($data_introduccion, 'es', true);
 $inicio_video = $contenidos->list($data_video_inicio, 'es', true);
 
+//mostrar la lista
+$lista_servicios=$contenidos->list(["images" => true, "filter" => ['contenidos.area = "servicio_list_inicio"']], 'es');
+
 $slider = $contenidos->list($data_slider_inicio, 'es', true);
 ?>
 <section class="banner-section two">
