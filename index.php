@@ -27,21 +27,49 @@ $panel_2 = [
     "filter" => ['contenidos.cod = "inicio_panel_2"']
 
 ];
-$data_introduccion_servicios= [
+$data_introduccion_servicios = [
     "images" => true,
     "filter" => ['contenidos.cod = "2dc7dae926"']
 
 ];
-$introduccion_servicios=$contenidos->list($data_introduccion_servicios, 'es', true);
-$panel_nosotros_somos_1=$contenidos->list($panel_1, 'es', true);
-$panel_nosotros_somos_2=$contenidos->list($panel_2, 'es', true);
+$data_area_portfolio = [
+    "images" => true,
+    "filter" => ['contenidos.area = "portfolio"']
+
+];
+
+$data_contactar = [
+    "images" => true,
+    "filter" => ['contenidos.cod = "2e8139cfa0"']
+];
+$data_area_team = [
+    "images" => true,
+    "filter" => ['contenidos.area = "testimonios"']
+
+];
+$data_testimonios = [
+    "images" => true,
+    "filter" => ['contenidos.area = "reseñas"']
+];
+$data_area_contacto = [
+    "images" => true,
+    "filter" => ['contenidos.area = "contacto"']
+
+];
+$contactar = $contenidos->list($data_contactar, 'es', true);
+$area_portfolio = $contenidos->list($data_area_portfolio, 'es', false);
+$introduccion_servicios = $contenidos->list($data_introduccion_servicios, 'es', true);
+$panel_nosotros_somos_1 = $contenidos->list($panel_1, 'es', true);
+$panel_nosotros_somos_2 = $contenidos->list($panel_2, 'es', true);
 $inicio_nosotros_somos = $contenidos->list(["filter" => ['contenidos.cod = "08f0db6d57"']], 'es', true);
 $inicio_introduccion = $contenidos->list($data_introduccion, 'es', true);
 $inicio_video = $contenidos->list($data_video_inicio, 'es', true);
+$area_team = $contenidos->list($data_area_team, 'es', false);
+$testimonios = $contenidos->list($data_testimonios, 'es', false);
+$info_contacto=$contenidos->list($data_area_contacto, 'es', false);
 
 //mostrar la lista
-$lista_servicios=$contenidos->list(["images" => true, "filter" => ['contenidos.area = "servicio_list_inicio"']], 'es');
-
+$lista_servicios = $contenidos->list(["order" => ' contenidos.orden ASC ', "images" => true, "filter" => ['contenidos.area = "servicios_list_inicio"']], 'es');
 $slider = $contenidos->list($data_slider_inicio, 'es', true);
 ?>
 <section class="banner-section two">
@@ -263,62 +291,23 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
     </div>
     <div class="container">
         <div class="row justify-content-center mb-60-none">
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-60">
-                <div class="service-item two">
-                    <div class="service-icon">
-                        <img src="<?= URL ?>/assets/theme/assets/images/icon/icon-3.png" alt="icon">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="title">IT Management</h3>
-                        <p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>
-                        <div class="service-btn">
-                            <a href="service.html" class="custom-btn">Learn More <i class="icon-Group-2361 ml-2"></i></a>
+            <?php foreach ($lista_servicios as $key => $item) { ?>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-60">
+                    <div class="service-item two">
+                        <div class="service-icon">
+                            <img src="<?= $item['images'][0]['url'] ?>" alt="icon">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="title"><?= $item['data']['titulo'] ?></h3>
+                            <p><?= $item['data']['contenido'] ?></p>
+                            <div class="service-btn">
+                                <a href="service.html" class="custom-btn">Learn More <i class="icon-Group-2361 ml-2"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-60">
-                <div class="service-item two">
-                    <div class="service-icon">
-                        <img src="<?= URL ?>/assets/theme/assets/images/icon/icon-4.png" alt="icon">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="title">Data Security</h3>
-                        <p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>
-                        <div class="service-btn">
-                            <a href="service.html" class="custom-btn">Learn More <i class="icon-Group-2361 ml-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-60">
-                <div class="service-item two">
-                    <div class="service-icon">
-                        <img src="<?= URL ?>/assets/theme/assets/images/icon/icon-5.png" alt="icon">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="title">Business Consulting</h3>
-                        <p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>
-                        <div class="service-btn">
-                            <a href="service.html" class="custom-btn">Learn More <i class="icon-Group-2361 ml-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-60">
-                <div class="service-item two">
-                    <div class="service-icon">
-                        <img src="<?= URL ?>/assets/theme/assets/images/icon/icon-6.png" alt="icon">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="title">QA & Testing</h3>
-                        <p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>
-                        <div class="service-btn">
-                            <a href="service.html" class="custom-btn">Learn More <i class="icon-Group-2361 ml-2"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
+
         </div>
     </div>
 </section>
@@ -343,12 +332,12 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                 <div class="col-xl-2 offset-xl-2 col-md-12 col-lg-4 mb-30">
                     <div class="project-left-content">
                         <div class="logo-icon">
-                            <img src="<?= URL ?>/assets/theme/assets/images/fav.png" alt="favicon">
+                            <img src="<?= $area_portfolio['07e5a9d2a2']['images'][0]['url'] ?>" alt="favicon">
                         </div>
-                        <h2 class="title">Softim Recent Projects</h2>
-                        <p>Credibly grow premier ideas rather than bricks-and-clicks strategic theme areas distributed</p>
+                        <h2 class="title"><?= $area_portfolio['07e5a9d2a2']['data']['titulo'] ?></h2>
+                        <p><?= $area_portfolio['07e5a9d2a2']['data']['contenido'] ?></p>
                         <div class="project-left-btn">
-                            <a href="project.html" class="btn--base active">View All Projects</a>
+                            <a href="<?= URL ?>/portfolios" class="btn--base active"><?= $area_portfolio['07e5a9d2a2']['data']['subtitulo'] ?></a>
                         </div>
                     </div>
                 </div>
@@ -362,36 +351,23 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                         </div>
                         <div class="project-slider">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="project-thumb two">
-                                        <img src="<?= URL ?>/assets/theme/assets/images/project/project-3.png" alt="project">
-                                        <div class="project-overlay">
-                                            <div class="overlay-content">
-                                                <h4 class="title"><a href="project-details.html">Brand redesign meanwhile <br> focusing product</a></h4>
+                                <?php foreach ($area_portfolio as $key => $item) {
+                                    if ($item['data']['destacado'] == 1) continue;
+                                ?>
+                                    <div class="swiper-slide">
+                                        <div class="project-thumb two">
+                                            <img src="<?= $item['images'][0]['url'] ?>" alt="project">
+                                            <div class="project-overlay">
+                                                <div class="overlay-content">
+                                                    <h4 class="title"><a href="<?= URL ?>/portfolios"><?= $item['data']['subtitulo'] ?> <br> <?= $item['data']['description'] ?></a></h4>
+                                                </div>
                                             </div>
                                         </div>
+
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="project-thumb two">
-                                        <img src="<?= URL ?>/assets/theme/assets/images/project/project-4.png" alt="project">
-                                        <div class="project-overlay">
-                                            <div class="overlay-content">
-                                                <h4 class="title"><a href="project-details.html">Brand redesign meanwhile <br> focusing product</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="project-thumb two">
-                                        <img src="<?= URL ?>/assets/theme/assets/images/project/project-5.png" alt="project">
-                                        <div class="project-overlay">
-                                            <div class="overlay-content">
-                                                <h4 class="title"><a href="project-details.html">Brand redesign meanwhile <br> focusing product</a></h4>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php } ?>
+
+
                             </div>
                         </div>
                     </div>
@@ -436,16 +412,15 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                         </div>
                     </div>
                     <div class="about-thumb">
-                        <img src="<?= URL ?>/assets/theme/assets/images/element/element-58.png" alt="element">
+                        <img src="<?= $contactar['images'][0]['url'] ?>" alt="element">
                     </div>
                 </div>
                 <div class="col-xl-6 col-lg-6 mb-30">
                     <div class="about-content">
-                        <h2 class="title">Have a project in mind? <span class="text--base">Let's connect</span></h2>
-                        <p class="para">We rank among the best in the US, Argentina, and Ukraine. Our apps get featured as best in class, & our clients love our work.</p>
-                        <p>Welcome To Softim, a software development company, helps to digitize businesses by focusing on client’s business challenges, needs, pain points and providing business-goals-oriented software solutions.</p>
+                        <h2 class="title"><?= $contactar['data']['titulo'] ?><span class="text--base"><?= $contactar['data']['description'] ?></span></h2>
+                        <p class="para"><?= $contactar['data']['contenido'] ?></p>
                         <div class="about-btn">
-                            <a href="contact.html" class="btn--base">Send Message</a>
+                            <a href="<?= URL ?>/contacto" class="btn--base"><?= $contactar['data']['keywords'] ?></a>
                         </div>
                     </div>
                 </div>
@@ -499,8 +474,8 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
             <div class="col-xl-12">
                 <div class="section-header-wrapper">
                     <div class="section-header">
-                        <h2 class="section-title">Softim Expert Team</h2>
-                        <p>We rank among the best in the US, Argentina, and Ukraine. Our apps get featured as best in class, and our clients love our work.</p>
+                        <h2 class="section-title"><?= $area_team['titulo']['data']['titulo'] ?></h2>
+                        <p><?= $area_team['titulo']['data']['contenido'] ?></p>
                     </div>
                     <div class="slider-nav-area">
                         <div class="slider-prev">
@@ -518,63 +493,30 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                 <div class="team-slider-area two">
                     <div class="team-slider two">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <div class="team-item">
-                                    <div class="team-thumb">
-                                        <img src="<?= URL ?>/assets/theme/assets/images/team/team-5.png" alt="team">
-                                        <div class="team-social-area">
-                                            <ul class="team-social">
-                                                <li><a href="#0"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#0"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#0"><i class="fab fa-google-plus-g"></i></a></li>
-                                                <li><a href="#0"><i class="fab fa-instagram"></i></a></li>
-                                            </ul>
+                            <?php foreach ($area_team as $key => $item) {
+                                if ($item['data']['destacado'] == 1) continue;
+                            ?>
+                                <div class="swiper-slide">
+                                    <div class="team-item">
+                                        <div class="team-thumb">
+                                            <img src="<?= $item['images'][0]['url'] ?>" alt="team">
+                                            <div class="team-social-area">
+                                                <ul class="team-social">
+                                                    <li><a href="#0"><i class="fab fa-facebook-f"></i></a></li>
+                                                    <li><a href="#0"><i class="fab fa-twitter"></i></a></li>
+                                                    <li><a href="#0"><i class="fab fa-google-plus-g"></i></a></li>
+                                                    <li><a href="#0"><i class="fab fa-instagram"></i></a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="team-content">
+                                            <h3 class="title"><a href="team-details.html"><?= $item['data']['titulo'] ?></a></h3>
+                                            <span class="sub-title"><?= $item['data']['subtitulo'] ?></span>
                                         </div>
                                     </div>
-                                    <div class="team-content">
-                                        <h3 class="title"><a href="team-details.html">Nilkusa Agawal</a></h3>
-                                        <span class="sub-title">Sr. Marketer</span>
-                                    </div>
                                 </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="team-item">
-                                    <div class="team-thumb">
-                                        <img src="<?= URL ?>/assets/theme/assets/images/team/team-4.png" alt="team">
-                                        <div class="team-social-area">
-                                            <ul class="team-social">
-                                                <li><a href="#0"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#0"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#0"><i class="fab fa-google-plus-g"></i></a></li>
-                                                <li><a href="#0"><i class="fab fa-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="team-content">
-                                        <h3 class="title"><a href="team-details.html">Abhisek Roy</a></h3>
-                                        <span class="sub-title">Havey Truck Instructor</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-slide">
-                                <div class="team-item">
-                                    <div class="team-thumb">
-                                        <img src="<?= URL ?>/assets/theme/assets/images/team/team-6.png" alt="team">
-                                        <div class="team-social-area">
-                                            <ul class="team-social">
-                                                <li><a href="#0"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="#0"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="#0"><i class="fab fa-google-plus-g"></i></a></li>
-                                                <li><a href="#0"><i class="fab fa-instagram"></i></a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                    <div class="team-content">
-                                        <h3 class="title"><a href="team-details.html">Rashmika Mandana</a></h3>
-                                        <span class="sub-title">Lady Instructor</span>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php }  ?>
+
                         </div>
                     </div>
                 </div>
@@ -604,8 +546,8 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
         <div class="row justify-content-center">
             <div class="col-xl-7 col-lg-8 text-center">
                 <div class="section-header">
-                    <h2 class="section-title">Hear from happy customers</h2>
-                    <p>Credibly grow premier ideas rather than bricks-and-clicks strategic theme areas distributed for stand-alone web-readiness.</p>
+                    <h2 class="section-title"><?= $testimonios['abb70728d8']['data']['titulo'] ?></h2>
+                    <p><?= $testimonios['abb70728d8']['data']['subtitulo'] ?></p>
                 </div>
             </div>
         </div>
@@ -615,78 +557,41 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                     <div class="client-slider-area two">
                         <div class="client-slider-two">
                             <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="client-item">
-                                        <div class="client-header">
-                                            <div class="client-quote">
-                                                <img src="<?= URL ?>/assets/theme/assets/images/client/quote-2.png" alt="client">
+
+                                <?php foreach ($testimonios as $key => $item)  {
+                                    if($item['data']['destacado'])continue;
+                                    ?>
+                                    <div class="swiper-slide">
+                                        <div class="client-item">
+                                            <div class="client-header">
+                                                <div class="client-quote">
+                                                    <img src="<?= URL ?>/assets/theme/assets/images/client/quote-2.png" alt="client">
+                                                </div>
+                                                <div class="client-thumb">
+                                                    <img src="<?= $item['images'][0]['url'] ?>" alt="client">
+                                                </div>
                                             </div>
-                                            <div class="client-thumb">
-                                                <img src="<?= URL ?>/assets/theme/assets/images/client/client-4.png" alt="client">
+                                            <div class="client-content">
+                                                <p><?= $item['data']['contenido'] ?></p>
                                             </div>
-                                        </div>
-                                        <div class="client-content">
-                                            <p>We teach martial arts because we love it — not because we want to make money on you. Unlike.</p>
-                                        </div>
-                                        <div class="client-footer">
-                                            <div class="client-footer-left">
-                                                <h4 class="title">Randall Schwartz</h4>
-                                                <span class="sub-title">Sr. Consultant</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="client-item">
-                                        <div class="client-header">
-                                            <div class="client-quote">
-                                                <img src="<?= URL ?>/assets/theme/assets/images/client/quote-2.png" alt="client">
-                                            </div>
-                                            <div class="client-thumb">
-                                                <img src="<?= URL ?>/assets/theme/assets/images/client/client-5.png" alt="client">
-                                            </div>
-                                        </div>
-                                        <div class="client-content">
-                                            <p>We teach martial arts because we love it — not because we want to make money on you. Unlike.</p>
-                                        </div>
-                                        <div class="client-footer">
-                                            <div class="client-footer-left">
-                                                <h4 class="title">Andru Smith</h4>
-                                                <span class="sub-title">Marketing Manager</span>
+                                            <div class="client-footer">
+                                                <div class="client-footer-left">
+                                                    <h4 class="title"><?= $item['data']['titulo'] ?></h4>
+                                                    <span class="sub-title"><?= $item['data']['subtitulo'] ?></span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="client-item">
-                                        <div class="client-header">
-                                            <div class="client-quote">
-                                                <img src="<?= URL ?>/assets/theme/assets/images/client/quote-2.png" alt="client">
-                                            </div>
-                                            <div class="client-thumb">
-                                                <img src="<?= URL ?>/assets/theme/assets/images/client/client-4.png" alt="client">
-                                            </div>
-                                        </div>
-                                        <div class="client-content">
-                                            <p>We teach martial arts because we love it — not because we want to make money on you. Unlike.</p>
-                                        </div>
-                                        <div class="client-footer">
-                                            <div class="client-footer-left">
-                                                <h4 class="title">Randall Schwartz</h4>
-                                                <span class="sub-title">Sr. Consultant</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <?php } ?>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                     <div class="client-right-thumb">
-                        <img src="<?= URL ?>/assets/theme/assets/images/client/client-big.png" alt="client">
+                        <img src="<?= $testimonios['abb70728d8']['images'][0]['url'] ?>" alt="client">
                         <div class="client-thumb-element">
-                            <img src="<?= URL ?>/assets/theme/assets/images/element/element-67.png" alt="element">
+                            <img src="<?= $testimonios['abb70728d8']['images'][1]['url'] ?>" alt="element">
                         </div>
                         <div class="client-thumb-overlay">
                             <div class="client-thumb-video">
@@ -698,7 +603,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                                             <div class="waves wave-3"></div>
                                         </div>
                                     </div>
-                                    <a class="video-icon video" data-rel="lightcase:myCollection" href="https://www.youtube.com/embed/LRhrNC-OC0Y">
+                                    <a class="video-icon video" data-rel="lightcase:myCollection" href="<?= $testimonios['abb70728d8']['data']['link'] ?>">
                                         <i class="las la-play"></i>
                                     </a>
                                 </div>
@@ -756,8 +661,8 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                     <div class="contact-form-area">
                         <div class="contact-form-header">
                             <div class="left">
-                                <h2 class="title">Get in Touch <span class="text--base">Let's Talk</span></h2>
-                                <p>Credibly grow premier ideas rather than bricks-and-clicks strategic theme areas.</p>
+                                <h2 class="title"><?=$info_contacto['ec594b6a48']['data']['titulo'] ?> <span class="text--base"><?=$info_contacto['ec594b6a48']['data']['subtitulo'] ?></span></h2>
+                                <p><?=$info_contacto['ec594b6a48']['data']['contenido'] ?></p>
                             </div>
                             <div class="right">
                                 <div class="circle">
@@ -769,13 +674,13 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                                         <g>
                                             <use xlink:href="#circlePathtwo" fill="none" />
                                             <text fill="#3249b3">
-                                                <textPath xlink:href="#circlePathtwo">Softim it solution Softim it solution Softim it solution Softim it solution</textPath>
+                                                <textPath xlink:href="#circlePathtwo"><?=$info_contacto['ec594b6a48']['data']['description'] ?></textPath>
                                             </text>
                                         </g>
                                     </svg>
                                 </div>
                                 <div class="contact-logo">
-                                    <img src="<?= URL ?>/assets/theme/assets/images/fav.png" alt="favicon">
+                                    <img src="<?=$info_contacto['ec594b6a48']['images'][0]['url'] ?>" alt="favicon">
                                 </div>
                             </div>
                         </div>

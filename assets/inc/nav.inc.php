@@ -70,3 +70,14 @@
         </div>
     </div>
 </header>
+
+<!-- <div class="preloader">
+    <div class="drawing" id="loading">
+        <div class="loading-dot"></div>
+    </div>
+</div> -->
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    End Preloader
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+<div class="cursor"></div>
+<div class="cursor-follower"></div>

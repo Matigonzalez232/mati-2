@@ -269,7 +269,7 @@ class Imagenes
                 "error" => $files["error"][$f],
                 "size" => $files["size"][$f]
             ];
-            $final_name_image = $this->f->normalizar_link($name) . "_" . substr(md5(uniqid(rand())), 0, 10);
+            $final_name_image = $this->f->normalizar_titulo_imagenes($name) . "_" . substr(md5(uniqid(rand())), 0, 10);
             $handle = new Upload($file);
             $handle->uploaded;
             foreach ($idioma as $idiomaItem) {
