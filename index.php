@@ -56,6 +56,14 @@ $data_area_contacto = [
     "filter" => ['contenidos.area = "contacto"']
 
 ];
+$data_area_novedades = [
+    "images" => true,
+    "filter" => ['contenidos.area = "novedades_inicio"']
+
+];
+
+
+//cambiar las consultas de inicio para que sea una sola de area ----------------
 $contactar = $contenidos->list($data_contactar, 'es', true);
 $area_portfolio = $contenidos->list($data_area_portfolio, 'es', false);
 $introduccion_servicios = $contenidos->list($data_introduccion_servicios, 'es', true);
@@ -66,11 +74,11 @@ $inicio_introduccion = $contenidos->list($data_introduccion, 'es', true);
 $inicio_video = $contenidos->list($data_video_inicio, 'es', true);
 $area_team = $contenidos->list($data_area_team, 'es', false);
 $testimonios = $contenidos->list($data_testimonios, 'es', false);
-$info_contacto=$contenidos->list($data_area_contacto, 'es', false);
-
-//mostrar la lista
+$info_contacto = $contenidos->list($data_area_contacto, 'es', false);
+$novedades = $contenidos->list($data_area_novedades, 'es', false);
 $lista_servicios = $contenidos->list(["order" => ' contenidos.orden ASC ', "images" => true, "filter" => ['contenidos.area = "servicios_list_inicio"']], 'es');
 $slider = $contenidos->list($data_slider_inicio, 'es', true);
+
 ?>
 <section class="banner-section two">
     <div class="banner-element-four">
@@ -558,9 +566,9 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                         <div class="client-slider-two">
                             <div class="swiper-wrapper">
 
-                                <?php foreach ($testimonios as $key => $item)  {
-                                    if($item['data']['destacado'])continue;
-                                    ?>
+                                <?php foreach ($testimonios as $key => $item) {
+                                    if ($item['data']['destacado']) continue;
+                                ?>
                                     <div class="swiper-slide">
                                         <div class="client-item">
                                             <div class="client-header">
@@ -661,8 +669,8 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                     <div class="contact-form-area">
                         <div class="contact-form-header">
                             <div class="left">
-                                <h2 class="title"><?=$info_contacto['ec594b6a48']['data']['titulo'] ?> <span class="text--base"><?=$info_contacto['ec594b6a48']['data']['subtitulo'] ?></span></h2>
-                                <p><?=$info_contacto['ec594b6a48']['data']['contenido'] ?></p>
+                                <h2 class="title"><?= $info_contacto['ec594b6a48']['data']['titulo'] ?> <span class="text--base"><?= $info_contacto['ec594b6a48']['data']['subtitulo'] ?></span></h2>
+                                <p><?= $info_contacto['ec594b6a48']['data']['contenido'] ?></p>
                             </div>
                             <div class="right">
                                 <div class="circle">
@@ -674,13 +682,13 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                                         <g>
                                             <use xlink:href="#circlePathtwo" fill="none" />
                                             <text fill="#3249b3">
-                                                <textPath xlink:href="#circlePathtwo"><?=$info_contacto['ec594b6a48']['data']['description'] ?></textPath>
+                                                <textPath xlink:href="#circlePathtwo"><?= $info_contacto['ec594b6a48']['data']['description'] ?></textPath>
                                             </text>
                                         </g>
                                     </svg>
                                 </div>
                                 <div class="contact-logo">
-                                    <img src="<?=$info_contacto['ec594b6a48']['images'][0]['url'] ?>" alt="favicon">
+                                    <img src="<?= $info_contacto['ec594b6a48']['images'][1]['url'] ?>" alt="favicon">
                                 </div>
                             </div>
                         </div>
@@ -740,69 +748,35 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
         <div class="row justify-content-center">
             <div class="col-xl-7 col-lg-8 text-center">
                 <div class="section-header">
-                    <h2 class="section-title">Softim Latest Posts</h2>
-                    <p>Credibly grow premier ideas rather than bricks-and-clicks strategic theme areas distributed for stand-alone web-readiness.</p>
+                    <h2 class="section-title"><?= $novedades['titulo_novedades']['data']['titulo'] ?></h2>
+                    <p><?= $novedades['titulo_novedades']['data']['subtitulo'] ?></p>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center mb-30-none">
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
-                <div class="blog-item">
-                    <div class="blog-thumb">
-                        <img src="<?= URL ?>/assets/theme/assets/images/blog/blog-1.png" alt="blog">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-category">
-                            <span>Business</span>
+            <?php foreach ($novedades as $key => $item) {
+                if ($item['data']['destacado'] == 1) continue;
+            ?>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
+                    <div class="blog-item">
+                        <div class="blog-thumb">
+                            <img src="<?= $item['images'][0]['url'] ?>" alt="blog">
                         </div>
-                        <h3 class="title"><a href="blog-details.html">It was popularised in the 1960s
-                                with the release</a></h3>
-                        <p>We teach martial arts because we love it — not because we want to make</p>
-                        <div class="blog-post-meta two">
-                            <span class="user">By : Smith Roy</span>
-                            <span class="date">24th March, 2022</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
-                <div class="blog-item">
-                    <div class="blog-thumb">
-                        <img src="<?= URL ?>/assets/theme/assets/images/blog/blog-2.png" alt="blog">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-category">
-                            <span>Software</span>
-                        </div>
-                        <h3 class="title"><a href="blog-details.html">Making it look like readable
-                                English Language.</a></h3>
-                        <p>We teach martial arts because we love it — not because we want to make</p>
-                        <div class="blog-post-meta two">
-                            <span class="user">By : Smith Roy</span>
-                            <span class="date">24th March, 2022</span>
+                        <div class="blog-content">
+                            <div class="blog-category">
+                                <span><?= $item['data']['subtitulo'] ?></span>
+                            </div>
+                            <h3 class="title"><a href="blog-details.html"><?= $item['data']['titulo'] ?></a></h3>
+                            <p><?= $item['data']['contenido'] ?></p>
+                            <div class="blog-post-meta two">
+                                <span class="user"><?= $item['data']['description'] ?></span>
+                                <span class="date"><?= $item['data']['keywords'] ?></span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
-                <div class="blog-item">
-                    <div class="blog-thumb">
-                        <img src="<?= URL ?>/assets/theme/assets/images/blog/blog-3.png" alt="blog">
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-category">
-                            <span>Design</span>
-                        </div>
-                        <h3 class="title"><a href="blog-details.html">It is a long established fact that a
-                                reader will be</a></h3>
-                        <p>We teach martial arts because we love it — not because we want to make</p>
-                        <div class="blog-post-meta two">
-                            <span class="user">By : Smith Roy</span>
-                            <span class="date">24th March, 2022</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <?php } ?>
+
         </div>
     </div>
 </section>
@@ -810,125 +784,6 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
     End Blog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 
-
-<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Start Footer
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-<footer class="footer-section two">
-    <div class="footer-element-three">
-        <img src="<?= URL ?>/assets/theme/assets/images/element/element-40.png" alt="element">
-    </div>
-    <div class="footer-element-seven two">
-        <img src="<?= URL ?>/assets/theme/assets/images/element/element-39.png" alt="element">
-    </div>
-    <div class="footer-element-eight">
-        <img src="<?= URL ?>/assets/theme/assets/images/element/element-7.png" alt="element">
-    </div>
-    <div class="footer-area ptb-120">
-        <div class="footer-area-element">
-            <img src="<?= URL ?>/assets/theme/assets/images/element/element-57.png" alt="element">
-        </div>
-        <div class="container">
-            <div class="footer-top-area">
-                <div class="row mb-30-none">
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                        <div class="footer-widget">
-                            <ul class="footer-contact-list">
-                                <li>
-                                    <span class="sub-title">Call us</span>
-                                    <h4 class="link-title"><a href="tel:0369569032">+11 0369 569 032</a></h4>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                        <div class="footer-widget">
-                            <ul class="footer-contact-list">
-                                <li>
-                                    <span class="sub-title">Write to Us</span>
-                                    <h4 class="link-title"><a href="mailto:">info@example.com</a></h4>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                        <div class="footer-widget">
-                            <ul class="footer-contact-list">
-                                <li>
-                                    <span class="sub-title">Office hours</span>
-                                    <h4 class="link-title">Mon-Sat 9:00 - 7:00</h4>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom-area">
-                <div class="row mb-30-none">
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                        <div class="footer-widget">
-                            <h5 class="title">About us</h5>
-                            <p>Treker was founded in 1991 by a group of safety-focused professionals who created The Wingman Standard for rigorously vetting air charter operators.</p>
-                            <ul class="footer-social">
-                                <li><a href="#0"><i class="fab fa-facebook-f"></i></a></li>
-                                <li><a href="#0"><i class="fab fa-twitter"></i></a></li>
-                                <li><a href="#0"><i class="fab fa-google-plus-g"></i></a></li>
-                                <li><a href="#0"><i class="fab fa-instagram"></i></a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-6 mb-30">
-                        <div class="footer-widget">
-                            <h4 class="title">Explore Softim</h4>
-                            <ul class="footer-list">
-                                <li><a href="#0">Account</a></li>
-                                <li><a href="#0">Privacy Policy</a></li>
-                                <li><a href="#0">Affilitate</a></li>
-                                <li><a href="#0">Program</a></li>
-                                <li><a href="#0">Our Partner</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-lg-2 col-md-6 mb-30">
-                        <div class="footer-widget">
-                            <h5 class="title">Quick Links</h5>
-                            <ul class="footer-list">
-                                <li><a href="#0">Account</a></li>
-                                <li><a href="#0">Privacy Policy</a></li>
-                                <li><a href="#0">Affilitate</a></li>
-                                <li><a href="#0">Program</a></li>
-                                <li><a href="#0">Our Partner</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
-                        <div class="footer-widget">
-                            <h5 class="title">Sign up Newsletter</h5>
-                            <form class="footer-subscribe-form">
-                                <input type="email" class="form--control" placeholder="Enter Mail">
-                                <button type="submit"><i class="las la-angle-right"></i></button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="copyright-wrapper two">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-xl-12 text-center">
-                    <div class="copyright-area">
-                        <div class="footer-logo">
-                            <a class="site-logo site-title" href="index.html"><img src="<?= URL ?>/assets/theme/assets/images/logo-two.png" alt="site-logo"></a>
-                        </div>
-                        <p>Copyright © 2022 <a href="index.html">Softim</a>. All Rights Reserved. Designed by ThemeIM</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
 <?php
 $template->themeEnd();
 ?>

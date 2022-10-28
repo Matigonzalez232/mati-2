@@ -35,20 +35,24 @@ if (isset($_POST["modificar"])) {
     unset($_POST["idioma"]);
     unset($_POST["cod"]);
     if (!isset($_POST["destacado"])) $_POST["destacado"] = "0";
-    $opcionesData = $_POST["opcion"];
-    unset($_POST["opcion"]);
-    $array = $funciones->antihackMulti($_POST);
-    foreach ($opcionesData as $key => $optionData) {
-        if ($optionData == "-- Sin seleccionar --" || $optionData == NULL) continue;
-        $opcionesValor->set("relacion_cod", $cod);
-        $opcionesValor->set("idioma", $idiomaGet);
-        $opcionesValor->set("opcion_cod", $key);
-        $opcionesValor->set("valor", $optionData);
-        $exist = $opcionesValor->checkIfExist();
-        $codOpcionValor = (!empty($exist)) ? $exist["data"]["cod"] : substr(md5(uniqid(rand())), 0, 10);
-        $opcionesValor->set("cod", $codOpcionValor);
-        (!empty($exist)) ? $opcionesValor->edit() : $opcionesValor->add();
+    if (isset($_POST["opcion"])) {
+        $opcionesData = $_POST["opcion"];
+        unset($_POST["opcion"]);
+        foreach ($opcionesData as $key => $optionData) {
+            if ($optionData == "-- Sin seleccionar --" || $optionData == NULL) continue;
+            $opcionesValor->set("relacion_cod", $cod);
+            $opcionesValor->set("idioma", $idiomaGet);
+            $opcionesValor->set("opcion_cod", $key);
+            $opcionesValor->set("valor", $optionData);
+            $exist = $opcionesValor->checkIfExist();
+            $codOpcionValor = (!empty($exist)) ? $exist["data"]["cod"] : substr(md5(uniqid(rand())), 0, 10);
+            $opcionesValor->set("cod", $codOpcionValor);
+            (!empty($exist)) ? $opcionesValor->edit() : $opcionesValor->add();
+        }
     }
+
+    $array = $funciones->antihackMulti($_POST);
+    
     $contenido->edit($array, ["cod = '$cod'", "idioma = '$idiomaGet'"]);
     if (!empty($_FILES['files']['name'][0])) {
         $imagenes->resizeImages($cod, $_FILES['files'], "assets/archivos/recortadas", $funciones->normalizar_link(strip_tags($array["titulo"])), [$idiomaGet]);
