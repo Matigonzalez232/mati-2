@@ -111,155 +111,155 @@ DROP TABLE IF EXISTS `usuarios_ip`;
 
 
 CREATE TABLE `_cfg_andreani` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `usuario` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `contraseña` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `envio_sucursal` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `envio_domicilio` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `envio_urgente` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `contraseña` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `envio_sucursal` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `envio_domicilio` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `envio_urgente` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_captcha` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `captcha_key` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `captcha_secret` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `captcha_key` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `captcha_secret` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_checkout` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tipo` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
-  `estado` int(11) NOT NULL DEFAULT '0',
-  `mostrar_precio` int(11) NOT NULL DEFAULT '0',
-  `envio` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `pago` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `idioma` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `tipo` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `estado` int NOT NULL DEFAULT '0',
+  `mostrar_precio` int NOT NULL DEFAULT '0',
+  `envio` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `pago` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `idioma` varchar(2) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_configheader` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `content_header` longtext COLLATE utf8_unicode_ci,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `content_header` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_contacto` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `whatsapp` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `messenger` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `telefono` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `email` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `domicilio` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `localidad` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `provincia` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `pais` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `whatsapp` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `messenger` varchar(500) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `telefono` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `email` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `domicilio` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `localidad` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `provincia` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `pais` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_email` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `remitente` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `smtp` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `smtp_secure` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `puerto` int(11) NOT NULL,
-  `email` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `password` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `remitente` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `smtp` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `smtp_secure` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `puerto` int NOT NULL,
+  `email` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `password` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_exportador_meli` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `clasica` float NOT NULL DEFAULT '0',
   `premium` float NOT NULL DEFAULT '0',
   `calcular_envio` tinyint(1) DEFAULT '0',
-  `link_json` varchar(400) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `carpeta_img` varchar(400) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `link_json` varchar(400) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `carpeta_img` varchar(400) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_hubspot` (
-  `api_key` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `api_key` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_impuestos` (
-  `cod` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `valor` int(11) DEFAULT '0',
-  `tipo` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
+  `valor` int DEFAULT '0',
+  `tipo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_marketing` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `google_data_studio_id` longtext COLLATE utf8_unicode_ci,
-  `google_analytics` longtext COLLATE utf8_unicode_ci,
-  `hubspot` longtext COLLATE utf8_unicode_ci,
-  `mailrelay` longtext COLLATE utf8_unicode_ci,
-  `onesignal` longtext COLLATE utf8_unicode_ci,
-  `facebook_pixel` longtext COLLATE utf8_unicode_ci,
-  `facebook_app_comment` longtext COLLATE utf8_unicode_ci,
-  `facebook_access_token` longtext COLLATE utf8_unicode_ci,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `google_data_studio_id` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `google_analytics` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `hubspot` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `mailrelay` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `onesignal` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `facebook_pixel` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `facebook_app_comment` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `facebook_access_token` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_mercadolibre` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `app_id` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `app_secret` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `app_id` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `app_secret` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_pagos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `variable1` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `variable2` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `variable3` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `empresa` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `variable1` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `variable2` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `variable3` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `empresa` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_cfg_redes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `facebook` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `twitter` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `instagram` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `linkedin` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `youtube` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `googleplus` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `facebook` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `twitter` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `instagram` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `linkedin` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `youtube` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `googleplus` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_localidades` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `provincia_id` int(11) NOT NULL,
-  `nombre` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-  `codigopostal` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `provincia_id` int NOT NULL,
+  `nombre` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `codigopostal` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22965 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22965 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `_provincias` (
-  `id` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `nombre` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `id` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `nombre` varchar(50) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `area` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `titulo` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `idioma` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `titulo` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `idioma` varchar(2) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unicos` (`cod`,`idioma`) USING BTREE,
   KEY `fgk_idioma_area` (`idioma`),
   CONSTRAINT `FK_idiomas_area` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `atributos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `cod_producto` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `idioma` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `cod_producto` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `value` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `idioma` varchar(5) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
   KEY `Indice` (`cod`,`cod_producto`,`idioma`) USING BTREE,
@@ -267,21 +267,21 @@ CREATE TABLE `atributos` (
   KEY `FK_productos_atributos` (`cod_producto`,`idioma`),
   CONSTRAINT `FK_idiomas_atributos` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_productos_atributos` FOREIGN KEY (`cod_producto`, `idioma`) REFERENCES `productos` (`cod`, `idioma`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `banners` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `titulo` longtext COLLATE utf8_unicode_ci,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `titulo` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `titulo_on` tinyint(1) NOT NULL DEFAULT '0',
-  `subtitulo` longtext COLLATE utf8_unicode_ci,
+  `subtitulo` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `subtitulo_on` tinyint(1) NOT NULL DEFAULT '0',
-  `categoria` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `link` mediumtext COLLATE utf8_unicode_ci,
+  `categoria` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `link` mediumtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `link_on` tinyint(1) NOT NULL DEFAULT '0',
-  `idioma` varchar(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'es',
+  `idioma` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT 'es',
   `fecha` date DEFAULT NULL,
-  `orden` int(11) NOT NULL DEFAULT '0',
+  `orden` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `Indice` (`cod`,`categoria`,`idioma`) USING BTREE,
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
@@ -289,29 +289,29 @@ CREATE TABLE `banners` (
   KEY `FK_idiomas_banners` (`idioma`),
   CONSTRAINT `FK_categorias_banners` FOREIGN KEY (`categoria`, `idioma`) REFERENCES `categorias` (`cod`, `idioma`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_idiomas_banners` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `categorias` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `titulo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `area` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `descripcion` longtext COLLATE utf8_unicode_ci,
-  `orden` int(11) NOT NULL DEFAULT '0',
-  `idioma` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `titulo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `area` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `descripcion` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `orden` int NOT NULL DEFAULT '0',
+  `idioma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
   KEY `FK_idiomas_categorias` (`idioma`),
   KEY `Indice` (`cod`,`titulo`,`area`) USING BTREE,
   CONSTRAINT `FK_idiomas_categorias` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `combinaciones` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `cod_subatributo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `cod_producto` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `idioma` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `cod_subatributo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `cod_producto` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `idioma` varchar(2) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_subatributos_combinaciones` (`cod_subatributo`,`idioma`),
   KEY `Indice` (`cod`,`cod_subatributo`,`cod_producto`,`idioma`) USING BTREE,
@@ -321,35 +321,35 @@ CREATE TABLE `combinaciones` (
   CONSTRAINT `FK_idiomas_combinaciones` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_productos_combinaciones` FOREIGN KEY (`cod_producto`, `idioma`) REFERENCES `productos` (`cod`, `idioma`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_subatributos_combinaciones` FOREIGN KEY (`cod_subatributo`, `idioma`) REFERENCES `subatributos` (`cod`, `idioma`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `comentarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `id_comentario` int(11) NOT NULL,
-  `usuario` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `comentario` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod_url` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `id_comentario` int NOT NULL,
+  `usuario` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `comentario` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `fecha` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `fgk_usuario` (`usuario`),
   KEY `Indice` (`cod_url`,`id_comentario`,`usuario`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `contenidos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `titulo` longtext COLLATE utf8_unicode_ci,
-  `subtitulo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `contenido` longtext COLLATE utf8_unicode_ci,
-  `categoria` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `subcategoria` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `keywords` longtext COLLATE utf8_unicode_ci,
-  `description` longtext COLLATE utf8_unicode_ci,
-  `link` longtext COLLATE utf8_unicode_ci,
-  `area` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `idioma` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `titulo` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `subtitulo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `contenido` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `categoria` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `subcategoria` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `keywords` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `description` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `link` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `area` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `idioma` varchar(5) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `fecha` date DEFAULT NULL,
-  `orden` int(11) NOT NULL DEFAULT '0',
+  `orden` int NOT NULL DEFAULT '0',
   `destacado` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
@@ -363,102 +363,102 @@ CREATE TABLE `contenidos` (
   CONSTRAINT `FK_categorias_contenidos` FOREIGN KEY (`categoria`, `idioma`) REFERENCES `categorias` (`cod`, `idioma`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_idiomas_contenidos` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_subcategorias_contenidos` FOREIGN KEY (`subcategoria`, `idioma`) REFERENCES `subcategorias` (`cod`, `idioma`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=109 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `descuentos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `titulo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `titulo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `monto` double DEFAULT NULL,
-  `categorias_cod` mediumtext COLLATE utf8_unicode_ci,
-  `subcategorias_cod` mediumtext COLLATE utf8_unicode_ci,
-  `productos_cod` mediumtext COLLATE utf8_unicode_ci,
+  `categorias_cod` mediumtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `subcategorias_cod` mediumtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `productos_cod` mediumtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `tipo` tinyint(1) DEFAULT '0',
-  `sector` int(11) NOT NULL DEFAULT '0',
+  `sector` int NOT NULL DEFAULT '0',
   `fecha_inicio` date DEFAULT NULL,
   `fecha_fin` date DEFAULT NULL,
-  `todos_productos` int(11) DEFAULT NULL,
-  `todas_categorias` int(11) DEFAULT NULL,
-  `todas_subcategorias` int(11) DEFAULT NULL,
+  `todos_productos` int DEFAULT NULL,
+  `todas_categorias` int DEFAULT NULL,
+  `todas_subcategorias` int DEFAULT NULL,
   `acumular` tinyint(1) NOT NULL DEFAULT '0',
-  `idioma` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `idioma` varchar(5) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
   KEY `fgk_idiomas_descuentos` (`idioma`),
   CONSTRAINT `FK_idiomas_descuentos` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `detalle_combinaciones` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod_combinacion` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod_combinacion` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `precio` float NOT NULL,
-  `stock` int(11) NOT NULL,
+  `stock` int NOT NULL,
   `mayorista` float DEFAULT '0',
-  `idioma` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `idioma` varchar(2) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_idiomas_detalle-combinaciones` (`idioma`) USING BTREE,
   KEY `FK_combinaciones_detalle-combinaciones` (`cod_combinacion`,`idioma`),
   CONSTRAINT `FK_combinaciones_detalle-combinaciones` FOREIGN KEY (`cod_combinacion`, `idioma`) REFERENCES `combinaciones` (`cod`, `idioma`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_idiomas_detalle-combinaciones` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `detalle_pedidos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `cantidad` int(11) NOT NULL DEFAULT '1',
-  `promo` int(11) DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `cantidad` int NOT NULL DEFAULT '1',
+  `promo` int DEFAULT NULL,
   `precio` float DEFAULT NULL,
   `precio_inicial` float DEFAULT NULL,
-  `cod_producto` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `producto_cod` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `producto` varchar(255) COLLATE utf8_unicode_ci DEFAULT '0',
-  `tipo` longtext COLLATE utf8_unicode_ci,
-  `cod_combinacion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `descuento` longtext COLLATE utf8_unicode_ci,
-  `cuotas` int(11) DEFAULT NULL,
+  `cod_producto` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `producto_cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `producto` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT '0',
+  `tipo` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `cod_combinacion` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `descuento` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `cuotas` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_pedidos_detalle-pedidos` (`cod`) USING BTREE,
   CONSTRAINT `FK_pedidos_detalle-pedidos` FOREIGN KEY (`cod`) REFERENCES `pedidos` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `envios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `titulo` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `descripcion` text COLLATE utf8_unicode_ci,
-  `opciones` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `peso` int(11) DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `titulo` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `descripcion` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `opciones` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `peso` int DEFAULT NULL,
   `precio` float NOT NULL,
-  `estado` int(11) NOT NULL,
+  `estado` int NOT NULL,
   `limite` float DEFAULT NULL,
-  `tipo_usuario` int(11) NOT NULL DEFAULT '0',
-  `idioma` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `tipo_usuario` int NOT NULL DEFAULT '0',
+  `idioma` varchar(5) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
   KEY `FK_idiomas_envios` (`idioma`) USING BTREE,
   CONSTRAINT `FK_idiomas_envios` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `estados_pedidos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `estado` enum('0','1','2','3') COLLATE utf8_unicode_ci NOT NULL,
-  `titulo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `asunto` longtext COLLATE utf8_unicode_ci,
-  `mensaje` longtext COLLATE utf8_unicode_ci,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `estado` enum('0','1','2','3') CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `titulo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `asunto` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `mensaje` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `enviar` tinyint(1) NOT NULL,
-  `idioma` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `idioma` varchar(5) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`titulo`,`idioma`) USING BTREE,
   KEY `FK_idiomas_estados-pedidos` (`idioma`),
   KEY `Indice` (`estado`,`idioma`) USING BTREE,
   CONSTRAINT `FK_idiomas_estados-pedidos` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `favoritos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `usuario` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `producto` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `idioma` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `producto` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `idioma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`usuario`,`producto`,`idioma`) USING BTREE,
   KEY `FK_productos_favoritos` (`producto`) USING BTREE,
@@ -466,108 +466,108 @@ CREATE TABLE `favoritos` (
   CONSTRAINT `FK_idiomas_favoritos` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_productos_favoritos` FOREIGN KEY (`producto`) REFERENCES `productos` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_usuarios_favoritos` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `idiomas` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `titulo` mediumtext COLLATE utf8_unicode_ci NOT NULL,
-  `default` enum('0','1') COLLATE utf8_unicode_ci NOT NULL DEFAULT '0',
-  `habilitado` tinyint(4) NOT NULL DEFAULT '1',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `titulo` mediumtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `default` enum('0','1') CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT '0',
+  `habilitado` tinyint NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`),
   KEY `Indice` (`cod`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `imagenes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `ruta` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `orden` int(11) NOT NULL DEFAULT '0',
-  `idioma` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `ruta` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `orden` int NOT NULL DEFAULT '0',
+  `idioma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`ruta`,`idioma`) USING BTREE,
   KEY `FK_idiomas_imagenes` (`idioma`) USING BTREE,
   KEY `cod` (`cod`,`idioma`),
   CONSTRAINT `FK_idiomas_imagenes` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=72 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `landing` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `titulo` longtext COLLATE utf8_unicode_ci,
-  `desarrollo` longtext COLLATE utf8_unicode_ci,
-  `categoria` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `keywords` longtext COLLATE utf8_unicode_ci,
-  `description` longtext COLLATE utf8_unicode_ci,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `titulo` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `desarrollo` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `categoria` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `keywords` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `description` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `fecha` date DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `categoria` (`categoria`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `landing_subs` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `landing_cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `nombre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `apellido` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `telefono` int(11) DEFAULT NULL,
-  `celular` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `dni` int(11) DEFAULT NULL,
-  `cuit` int(11) DEFAULT NULL,
-  `provincia` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `localidad` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `pais` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `direccion` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `empresa` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cargo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `razon_social` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `mensaje` text COLLATE utf8_unicode_ci,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `landing_cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `nombre` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `apellido` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `telefono` int DEFAULT NULL,
+  `celular` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `dni` int DEFAULT NULL,
+  `cuit` int DEFAULT NULL,
+  `provincia` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `localidad` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `pais` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `direccion` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `empresa` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `cargo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `razon_social` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `mensaje` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `fecha` datetime DEFAULT NULL,
-  `ganador` int(11) NOT NULL DEFAULT '0',
+  `ganador` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `menu` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `padre` int(11) DEFAULT NULL,
-  `titulo` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `icono` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `link` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `target` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `area` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `orden` int(11) DEFAULT '0',
-  `opciones` tinyint(4) NOT NULL DEFAULT '0',
-  `habilitado` tinyint(4) NOT NULL DEFAULT '1',
-  `idioma` varchar(10) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'es',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `padre` int DEFAULT NULL,
+  `titulo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `icono` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `link` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `target` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `area` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `orden` int DEFAULT '0',
+  `opciones` tinyint NOT NULL DEFAULT '0',
+  `habilitado` tinyint NOT NULL DEFAULT '1',
+  `idioma` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL DEFAULT 'es',
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`link`,`idioma`) USING BTREE,
   KEY `FK_idiomas_menu` (`idioma`) USING BTREE,
   KEY `area` (`area`),
   CONSTRAINT `FK_idiomas_menu` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=203 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=230 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `mercadolibre` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `code` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `code` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `type` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `price` float NOT NULL,
-  `stock` int(11) NOT NULL DEFAULT '0',
-  `product` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `stock` int NOT NULL DEFAULT '0',
+  `product` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_productos_mercadolibre` (`product`) USING BTREE,
   CONSTRAINT `FK_productos_mercadolibre` FOREIGN KEY (`product`) REFERENCES `productos` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `opciones` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `titulo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `tipo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `opciones` text COLLATE utf8_unicode_ci,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `titulo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `tipo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `opciones` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `multiple` tinyint(1) NOT NULL DEFAULT '0',
-  `area` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `categoria` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `idioma` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `area` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `categoria` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `idioma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `cod` (`cod`),
   UNIQUE KEY `cod_3` (`cod`,`idioma`),
@@ -575,91 +575,91 @@ CREATE TABLE `opciones` (
   KEY `fgk_categoria_opciones` (`categoria`),
   CONSTRAINT `fgk_categoria_opciones` FOREIGN KEY (`categoria`) REFERENCES `categorias` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fgk_idioma_opciones` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `opciones_valor` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `relacion_cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `opcion_cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `valor` varchar(500) COLLATE utf8_unicode_ci NOT NULL,
-  `idioma` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `relacion_cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `opcion_cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `valor` varchar(500) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `idioma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `producto_cod` (`relacion_cod`),
   KEY `opcion_cod` (`opcion_cod`),
   KEY `fgk_idioma_valor` (`idioma`),
   CONSTRAINT `fgk_idioma_valor` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `fgk_opciones_valor` FOREIGN KEY (`opcion_cod`) REFERENCES `opciones` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `pagos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `titulo` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `leyenda` longtext COLLATE utf8_unicode_ci,
-  `estado` int(11) NOT NULL,
-  `monto` int(11) DEFAULT '0',
-  `defecto` int(11) NOT NULL,
-  `tipo` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'ID de _cfg_pagos',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `titulo` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `leyenda` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `estado` int NOT NULL,
+  `monto` int DEFAULT '0',
+  `defecto` int NOT NULL,
+  `tipo` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL COMMENT 'ID de _cfg_pagos',
   `minimo` float NOT NULL DEFAULT '0',
   `maximo` float NOT NULL DEFAULT '0',
-  `entrega` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'porcentaje a pagar de seña	',
-  `cuotas` int(11) DEFAULT NULL,
-  `tipo_usuario` int(11) NOT NULL DEFAULT '0',
+  `entrega` tinyint NOT NULL DEFAULT '0' COMMENT 'porcentaje a pagar de seña	',
+  `cuotas` int DEFAULT NULL,
+  `tipo_usuario` int NOT NULL DEFAULT '0',
   `acumular` tinyint(1) NOT NULL DEFAULT '0',
   `desc_usuario` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'No se esta usando',
   `desc_cupon` tinyint(1) NOT NULL DEFAULT '0' COMMENT 'No se esta usando',
-  `idioma` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `idioma` varchar(5) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
   KEY `FK_idiomas_pagos` (`idioma`) USING BTREE,
   KEY `Indice` (`cod`,`estado`,`tipo`,`defecto`) USING BTREE,
   CONSTRAINT `FK_idiomas_pagos` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `pedidos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `estado` int(11) DEFAULT '0',
-  `pago` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `detalle` longtext COLLATE utf8_unicode_ci,
-  `observacion` text COLLATE utf8_unicode_ci,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `estado` int DEFAULT '0',
+  `pago` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `detalle` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `observacion` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `entrega` float NOT NULL DEFAULT '0',
   `total` float NOT NULL DEFAULT '0',
-  `usuario` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `usuario` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `fecha` datetime DEFAULT NULL,
   `visto` tinyint(1) DEFAULT '0',
-  `idioma` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `idioma` varchar(5) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `FK_usuarios_pedidos` (`cod`,`usuario`) USING BTREE,
   KEY `FK_idiomas_pedidos` (`idioma`) USING BTREE,
   KEY `Unico` (`usuario`,`estado`,`pago`) USING BTREE,
   CONSTRAINT `FK_usuarios_pedidos` FOREIGN KEY (`usuario`) REFERENCES `usuarios` (`cod`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `productos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `cod_producto` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `titulo` text COLLATE utf8_unicode_ci,
-  `desarrollo` longtext COLLATE utf8_unicode_ci,
-  `stock` int(11) DEFAULT '0',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `cod_producto` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `titulo` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `desarrollo` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `stock` int DEFAULT '0',
   `precio` float DEFAULT '0',
   `precio_descuento` float DEFAULT '0',
   `precio_mayorista` float DEFAULT '0',
-  `categoria` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `subcategoria` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `categoria` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `subcategoria` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   `peso` float DEFAULT '0',
-  `keywords` text COLLATE utf8_unicode_ci,
-  `description` text COLLATE utf8_unicode_ci,
+  `keywords` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `description` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   `destacado` tinyint(1) DEFAULT '0',
   `envio_gratis` tinyint(1) DEFAULT '0',
   `mostrar_web` tinyint(1) DEFAULT '1',
-  `tercercategoria` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL COMMENT 'Tercer Categoria',
+  `tercercategoria` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL COMMENT 'Tercer Categoria',
   `fecha` date DEFAULT NULL,
   `meli` tinyint(1) DEFAULT '0',
-  `url` text COLLATE utf8_unicode_ci,
-  `idioma` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `url` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `idioma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
   KEY `FK_subcategorias_productos` (`subcategoria`,`idioma`),
@@ -672,26 +672,26 @@ CREATE TABLE `productos` (
   CONSTRAINT `FK_idiomas_productos` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_subcategorias_productos` FOREIGN KEY (`subcategoria`, `idioma`) REFERENCES `subcategorias` (`cod`, `idioma`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_tercercategorias_productos` FOREIGN KEY (`tercercategoria`, `idioma`) REFERENCES `tercercategorias` (`cod`, `idioma`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `productos_relacionados` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `titulo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `productos_cod` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `idioma` varchar(10) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `titulo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `productos_cod` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `idioma` varchar(10) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
   KEY `FK_idiomas_productos-relacionados` (`idioma`) USING BTREE,
   CONSTRAINT `FK_idiomas_productos-relacionados` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `productos_visitados` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `producto` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `usuario_ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `producto` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `usuario_ip` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `fecha` datetime NOT NULL,
-  `idioma` varchar(2) COLLATE utf8_unicode_ci NOT NULL,
+  `idioma` varchar(2) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `producto` (`producto`),
   KEY `usuario_ip` (`usuario_ip`),
@@ -699,150 +699,150 @@ CREATE TABLE `productos_visitados` (
   CONSTRAINT `cod_producto_visitados` FOREIGN KEY (`producto`) REFERENCES `productos` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `idioma` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `usuario_producto_visitado` FOREIGN KEY (`usuario_ip`) REFERENCES `usuarios_ip` (`ip`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `promos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `producto` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `lleva` int(11) DEFAULT NULL,
-  `paga` int(11) DEFAULT NULL,
-  `idioma` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `producto` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `lleva` int DEFAULT NULL,
+  `paga` int DEFAULT NULL,
+  `idioma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `producto` (`producto`,`idioma`),
   KEY `FK_idiomas_promos` (`idioma`),
   KEY `Indice` (`lleva`,`paga`) USING BTREE,
   CONSTRAINT `FK_idiomas_promos` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `FK_productos_promos` FOREIGN KEY (`producto`, `idioma`) REFERENCES `productos` (`cod`, `idioma`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `roles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `nombre` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `crear` tinyint(4) NOT NULL DEFAULT '0',
-  `editar` tinyint(4) NOT NULL DEFAULT '0',
-  `eliminar` tinyint(4) NOT NULL DEFAULT '0',
-  `permisos` int(11) DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `nombre` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `crear` tinyint NOT NULL DEFAULT '0',
+  `editar` tinyint NOT NULL DEFAULT '0',
+  `eliminar` tinyint NOT NULL DEFAULT '0',
+  `permisos` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `cod_2` (`cod`,`permisos`),
   KEY `FK_menu_roles` (`permisos`)
-) ENGINE=InnoDB AUTO_INCREMENT=50 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `roles_admin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `rol` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `admin` int(11) NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `rol` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `admin` int NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `rol` (`rol`,`admin`),
   KEY `admin_fk` (`admin`),
   KEY `rol_fk` (`rol`),
   CONSTRAINT `FK_admin_roles_admin` FOREIGN KEY (`admin`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=122 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `seo` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `url` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `title` longtext COLLATE utf8_unicode_ci,
-  `description` longtext COLLATE utf8_unicode_ci,
-  `keywords` longtext COLLATE utf8_unicode_ci,
-  `idioma` varchar(11) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `url` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `title` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `description` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `keywords` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `idioma` varchar(11) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
   KEY `FK_idiomas_seo` (`idioma`) USING BTREE,
   CONSTRAINT `FK_idiomas_seo` FOREIGN KEY (`idioma`) REFERENCES `idiomas` (`cod`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `subatributos` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `cod_atributo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `value` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `idioma` varchar(5) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `cod_atributo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `value` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `idioma` varchar(5) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
   KEY `Indice` (`cod`,`cod_atributo`,`idioma`) USING BTREE,
   KEY `FK_atributos_subatributos` (`cod_atributo`,`idioma`),
   KEY `FK_idiomas_subatributos` (`idioma`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `subcategorias` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `titulo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `categoria` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `orden` int(11) NOT NULL DEFAULT '0',
-  `idioma` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `titulo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `categoria` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `orden` int NOT NULL DEFAULT '0',
+  `idioma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
   KEY `FK_categorias_subcategorias` (`categoria`,`idioma`),
   KEY `FK_idiomas_subcategorias` (`idioma`) USING BTREE,
   KEY `Indice` (`cod`,`categoria`,`idioma`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `tercercategorias` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `titulo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `subcategoria` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `descripcion` text COLLATE utf8_unicode_ci,
-  `idioma` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `orden` int(11) NOT NULL DEFAULT '0',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `titulo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `subcategoria` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `descripcion` text CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `idioma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `orden` int NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `Unico` (`cod`,`idioma`) USING BTREE,
   KEY `FK_subcategorias_tercercategorias` (`subcategoria`,`idioma`),
   KEY `FK_idiomas_tercercategoria` (`idioma`) USING BTREE,
   KEY `Indice` (`cod`,`subcategoria`,`idioma`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `token_ml` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `access_token` longtext COLLATE utf8_unicode_ci,
-  `refresh_token` longtext COLLATE utf8_unicode_ci,
-  `expire_in` longtext COLLATE utf8_unicode_ci,
-  `secret_request_id` longtext COLLATE utf8_unicode_ci,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `access_token` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `refresh_token` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `expire_in` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `secret_request_id` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `cod` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `nombre` longtext COLLATE utf8_unicode_ci,
-  `apellido` longtext COLLATE utf8_unicode_ci,
-  `doc` longtext COLLATE utf8_unicode_ci,
-  `email` longtext COLLATE utf8_unicode_ci,
-  `password` longtext COLLATE utf8_unicode_ci,
-  `direccion` mediumtext COLLATE utf8_unicode_ci,
-  `postal` longtext COLLATE utf8_unicode_ci,
-  `localidad` longtext COLLATE utf8_unicode_ci,
-  `provincia` longtext COLLATE utf8_unicode_ci,
-  `pais` longtext COLLATE utf8_unicode_ci,
-  `telefono` longtext COLLATE utf8_unicode_ci,
-  `celular` longtext COLLATE utf8_unicode_ci,
-  `minorista` int(11) DEFAULT '1',
-  `invitado` int(11) DEFAULT '1',
+  `id` int NOT NULL AUTO_INCREMENT,
+  `cod` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `nombre` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `apellido` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `doc` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `email` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `password` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `direccion` mediumtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `postal` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `localidad` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `provincia` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `pais` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `telefono` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `celular` longtext CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci,
+  `minorista` int DEFAULT '1',
+  `invitado` int DEFAULT '1',
   `descuento` float DEFAULT '0',
   `fecha` date DEFAULT NULL,
-  `estado` int(11) DEFAULT '1',
-  `admin` tinyint(4) NOT NULL DEFAULT '0',
-  `idioma` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `estado` int DEFAULT '1',
+  `admin` tinyint NOT NULL DEFAULT '0',
+  `idioma` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `Indice` (`cod`,`estado`,`minorista`) USING BTREE,
   KEY `FK_idiomas_usuarios` (`idioma`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=45 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 CREATE TABLE `usuarios_ip` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `usuario` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `ip` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `dispositivo` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `id` int NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci DEFAULT NULL,
+  `ip` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
+  `dispositivo` varchar(255) CHARACTER SET utf8mb3 COLLATE utf8mb3_unicode_ci NOT NULL,
   `frecha_creacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `ultima_actualizacion` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `ip` (`ip`),
   KEY `ip_2` (`ip`),
   KEY `cod_usuario_ip` (`usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
 
 
@@ -23837,46 +23837,54 @@ INSERT INTO `area` VALUES("3","inicio","INICIO","es"),
 ("8","reseñas","TESTIMONIOS","es"),
 ("9","contacto","CONTACTO","es"),
 ("10","novedades_inicio","NOVEDADES","es"),
-("11","footer","FOOTER","es"),
-("12","empresa","EMPRESA","es");
+("11","footer","PIE DE PAGINA","es"),
+("12","empresa","EMPRESA","es"),
+("13","servicios","servicios","es"),
+("14","desarrollo","SERVICIO DE DESARROLLO","es"),
+("17","galeria","GALERIA","es"),
+("18","blog","BLOG","es");
+INSERT INTO `categorias` VALUES("1","fedf0a0aea","noticias","blog",NULL,"0","es"),
+("2","publicaciones_recientes","publicaciones recientes","blog",NULL,"0","es"),
+("3","categorias","categoria","blog",NULL,"0","es"),
+("4","tags","Tags","blog",NULL,"0","es");
 INSERT INTO `contenidos` VALUES("4","slider-inicio","SLIDER",NULL,NULL,NULL,NULL,NULL,NULL,NULL,"inicio","es",NULL,"0","0"),
-("5","inicio-introduccion","Soft i´m Developers ","Impressive Experience","<h3><span style=\"color:#000099;\">Best It Solution Provider</span></h3>\n",NULL,NULL,"TECH","Personalization assumed up an excess of position in the showcasing space and has made each and every one of your messages exhausting and without feelings.",NULL,"inicio","es",NULL,"0","0"),
+("5","inicio-introduccion","Soft i´m Developers ","Impressive Experience","<h3><span style=\"color:#000099;\">Best It Solution Provider</span></h3>\n\n",NULL,NULL,"TECH","Personalization assumed up an excess of position in the showcasing space and has made each and every one of your messages exhausting and without feelings.",NULL,"inicio","es",NULL,"0","0"),
 ("6","inicio_video","Softim it solution Softim it solution Softim it solution Softim it solution","Play Intro",NULL,NULL,NULL,NULL,NULL,"https://youtu.be/LRhrNC-OC0Y","inicio","es",NULL,"0","0"),
-("7","08f0db6d57","We Are Progressive IT Service Company",NULL,"<p>Our motto includes the core values of the company and describes our philosophy. We moved heaven and earth to make the company&rsquo;s motto applicable to every member of the team.</p>\n",NULL,NULL,NULL,NULL,NULL,"inicio","es",NULL,"0","0"),
+("7","08f0db6d57","We Are Progressive IT Service Company",NULL,"<p>Our motto includes the core values of the company and describes our philosophy. We moved heaven and earth to make the company&rsquo;s motto applicable to every member of the team.</p>\n\n",NULL,NULL,NULL,NULL,NULL,"inicio","es",NULL,"0","0"),
 ("8","inicio_panel_1","Years of Experience","+",NULL,NULL,NULL,NULL,"0",NULL,"inicio","es",NULL,"0","0"),
 ("9","inicio_panel_2","Experienced Employees","+",NULL,NULL,NULL,NULL,"0",NULL,"inicio","es",NULL,"0","0"),
-("10","2dc7dae926","We Specialize In The Web Development",NULL,"<p>Our motto includes the core values of the company and describes our philosophy. We moved heaven and earth to make the company&rsquo;s motto applicable to every member of the team.</p>\n",NULL,NULL,NULL,NULL,NULL,"inicio","es",NULL,"0","0"),
-("11","36ffd96e17","IT Management",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios_list_inicio","es",NULL,"1","0"),
-("12","76a343e474","Data Security",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios_list_inicio","es",NULL,"2","0"),
-("13","5d6358d2ae","Business Consulting",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios_list_inicio","es",NULL,"3","0"),
-("14","9f212f8aea","QA & Testing",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios_list_inicio","es",NULL,"4","0"),
-("15","07e5a9d2a2","Softim Recent Projects","View All Projects","<p>Credibly grow premier ideas rather than bricks-and-clicks strategic theme areas distributed</p>\n",NULL,NULL,NULL,NULL,NULL,"portfolio","es",NULL,"0","1"),
+("10","2dc7dae926","We Specialize In The Web Development",NULL,"<p>Our motto includes the core values of the company and describes our philosophy. We moved heaven and earth to make the company&rsquo;s motto applicable to every member of the team.</p>\n\n",NULL,NULL,NULL,NULL,NULL,"inicio","es",NULL,"0","0"),
+("11","36ffd96e17","IT Management",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n\n",NULL,NULL,NULL,NULL,NULL,"servicios_list_inicio","es",NULL,"1","0"),
+("12","76a343e474","Data Security",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n\n",NULL,NULL,NULL,NULL,NULL,"servicios_list_inicio","es",NULL,"2","0"),
+("13","5d6358d2ae","Business Consulting",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n\n",NULL,NULL,NULL,NULL,NULL,"servicios_list_inicio","es",NULL,"3","0"),
+("14","9f212f8aea","QA & Testing",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n\n",NULL,NULL,NULL,NULL,NULL,"servicios_list_inicio","es",NULL,"4","0"),
+("15","07e5a9d2a2","Softim Recent Projects","View All Projects","<p>Credibly grow premier ideas rather than bricks-and-clicks strategic theme areas distributed</p>\n\n",NULL,NULL,NULL,NULL,NULL,"portfolio","es",NULL,"0","1"),
 ("16","507f2b8e73","imagen1","Brand redesign meanwhile ",NULL,NULL,NULL,NULL,"focusing product",NULL,"portfolio","es",NULL,"0","0"),
 ("17","15bccfbee4","imagen2","Brand redesign meanwhile",NULL,NULL,NULL,NULL,"focusing product",NULL,"portfolio","es",NULL,"0","0"),
 ("18","5594a192cc","imagen3","Brand redesign meanwhile",NULL,NULL,NULL,NULL,"focusing product",NULL,"portfolio","es",NULL,"0","0"),
-("19","2e8139cfa0","Have A Project In Mind?","We rank among the best in the US, Argentina, and Ukraine. Our apps get featured as best in class, & our clients love our work.","<p>Welcome To Softim, a software development company, helps to digitize businesses by focusing on client&rsquo;s business challenges, needs, pain points and providing business-goals-oriented software solutions.</p>\n",NULL,NULL,"Send Message","Let´s Connect",NULL,"inicio","es",NULL,"0","0"),
-("20","titulo","Softim Expert Team",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get featured as best in class, and our clients love our work.</p>\n",NULL,NULL,NULL,NULL,NULL,"testimonios","es",NULL,"0","1"),
+("19","2e8139cfa0","Have A Project In Mind?","We rank among the best in the US, Argentina, and Ukraine. Our apps get featured as best in class, & our clients love our work.","<p>Welcome To Softim, a software development company, helps to digitize businesses by focusing on client&rsquo;s business challenges, needs, pain points and providing business-goals-oriented software solutions.</p>\n\n",NULL,NULL,"Send Message","Let´s Connect",NULL,"inicio","es",NULL,"0","0"),
+("20","titulo","Softim Expert Team",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get featured as best in class, and our clients love our work.</p>\n\n",NULL,NULL,NULL,NULL,NULL,"testimonios","es",NULL,"0","1"),
 ("21","9bcf49f4b0","Nilkusa Agawal","Sr. Marketer",NULL,NULL,NULL,NULL,NULL,NULL,"testimonios","es","2022-10-27","0","0"),
 ("22","e2b342e7ca","Abhisek Roy","Havey Truck Instructor",NULL,NULL,NULL,NULL,NULL,NULL,"testimonios","es","2022-10-27","0","0"),
 ("23","0b7046fc6f","Rashmika Mandana","Lady Instructor",NULL,NULL,NULL,NULL,NULL,NULL,"testimonios","es","2022-10-27","0","0"),
 ("25","abb70728d8","Hear From Happy Customers","Credibly grow premier ideas rather than bricks-and-clicks strategic theme areas distributed for stand-alone web-readiness.",NULL,NULL,NULL,NULL,NULL,"https://youtu.be/LRhrNC-OC0Y","reseñas","es",NULL,"0","1"),
-("26","77ffa3fe99","Randall Schwartz","Sr. Consultant","<p>We teach martial arts because we love it &mdash; not because we want to make money on you. Unlike.</p>\n",NULL,NULL,NULL,NULL,NULL,"reseñas","es","2022-10-27","0","0"),
-("27","5f8a5afcbd","Andru Smith","Marketing Manager","<p>We teach martial arts because we love it &mdash; not because we want to make money on you. Unlike.</p>\n",NULL,NULL,NULL,NULL,NULL,"reseñas","es","2022-10-27","0","0"),
-("28","ec594b6a48","Get in Touch","Lets Talk","<p>Credibly grow premier ideas rather than bricks-and-clicks strategic theme areas.</p>\n",NULL,NULL,NULL,"Softim it solution Softim it solution Softim it solution Softim it solution",NULL,"contacto","es",NULL,"0","0"),
+("26","77ffa3fe99","Randall Schwartz","Sr. Consultant","<p>We teach martial arts because we love it &mdash; not because we want to make money on you. Unlike.</p>\n\n",NULL,NULL,NULL,NULL,NULL,"reseñas","es","2022-10-27","0","0"),
+("27","5f8a5afcbd","Andru Smith","Marketing Manager","<p>We teach martial arts because we love it &mdash; not because we want to make money on you. Unlike.</p>\n\n",NULL,NULL,NULL,NULL,NULL,"reseñas","es","2022-10-27","0","0"),
+("28","ec594b6a48","Get in Touch","Lets Talk","<p>Credibly grow premier ideas rather than bricks-and-clicks strategic theme areas.</p>\n\n",NULL,NULL,NULL,"Softim it solution Softim it solution Softim it solution Softim it solution",NULL,"contacto","es",NULL,"0","0"),
 ("29","titulo_novedades","Softim Latest Posts","Credibly grow premier ideas rather than bricks-and-clicks strategic theme areas distributed for stand-alone web-readiness.",NULL,NULL,NULL,NULL,NULL,NULL,"novedades_inicio","es",NULL,"0","1"),
-("30","842a796e1e","It is a long established fact that a reader will be","Design","<p>We teach martial arts because we love it &mdash; not because we want to make</p>\n",NULL,NULL,"24th March, 2022","By : Smith Roy",NULL,"novedades_inicio","es","2022-10-28","0","0"),
-("31","ceb2a0f602","Making it look like readable English Language.","Software","<p>We teach martial arts because we love it &mdash; not because we want to make</p>\n",NULL,NULL,"24th March, 2022","By : Smith Roy",NULL,"novedades_inicio","es",NULL,"0","0"),
-("32","3a654b7573","It was popularised in the 1960s with the release","Business","<p>We teach martial arts because we love it &mdash; not because we want to make</p>\n",NULL,NULL,"24th March, 2022","By : Smith Roy",NULL,"novedades_inicio","es",NULL,"0","0"),
-("33","b766c89ec8","CALL US",NULL,"<p>+11 0369 569 032</p>\n",NULL,NULL,NULL,NULL,"tel:0369569032","footer","es","2022-10-28","0","0"),
-("34","4021fd3602","Write to Us",NULL,"<p>info@example.com</p>\n",NULL,NULL,NULL,NULL,"mailto:","footer","es","2022-10-28","0","0"),
-("35","599fdb9cae","Office hours",NULL,"<p>Mon-Sat 9:00 - 7:00</p>\n",NULL,NULL,NULL,NULL,"link-title","footer","es",NULL,"0","0"),
-("36","aboutUs","About us",NULL,"<p>Treker was founded in 1991 by a group of safety-focused professionals who created The Wingman Standard for rigorously vetting air charter operators.</p>\n",NULL,NULL,NULL,NULL,NULL,"footer","es",NULL,"0","0"),
+("30","842a796e1e","It is a long established fact that a reader will be","Design","<p>We teach martial arts because we love it &mdash; not because we want to make</p>\n\n",NULL,NULL,"24th March, 2022","By : Smith Roy",NULL,"novedades_inicio","es","2022-10-28","0","0"),
+("31","ceb2a0f602","Making it look like readable English Language.","Software","<p>We teach martial arts because we love it &mdash; not because we want to make</p>\n\n",NULL,NULL,"24th March, 2022","By : Smith Roy",NULL,"novedades_inicio","es",NULL,"0","0"),
+("32","3a654b7573","It was popularised in the 1960s with the release","Business","<p>We teach martial arts because we love it &mdash; not because we want to make</p>\n\n",NULL,NULL,"24th March, 2022","By : Smith Roy",NULL,"novedades_inicio","es",NULL,"0","0"),
+("33","b766c89ec8","CALL US",NULL,"<p>+11 0369 569 032</p>\n\n",NULL,NULL,NULL,NULL,"tel:0369569032","footer","es","2022-10-28","0","0"),
+("34","4021fd3602","Write to Us",NULL,"<p>info@example.com</p>\n\n",NULL,NULL,NULL,NULL,"mailto:","footer","es","2022-10-28","0","0"),
+("35","599fdb9cae","Office hours",NULL,"<p>Mon-Sat 9:00 - 7:00</p>\n\n",NULL,NULL,NULL,NULL,"link-title","footer","es",NULL,"0","0"),
+("36","aboutUs","About us",NULL,"<p>Treker was founded in 1991 by a group of safety-focused professionals who created The Wingman Standard for rigorously vetting air charter operators.</p>\n\n",NULL,NULL,NULL,NULL,NULL,"footer","es",NULL,"0","0"),
 ("37","1b737655d9","Explore Softim",NULL,NULL,NULL,NULL,NULL,NULL,NULL,"footer","es","2022-10-28","0","0"),
 ("38","cad25ca119","Quick Links",NULL,NULL,NULL,NULL,NULL,NULL,NULL,"footer","es","2022-10-28","0","0"),
 ("39","60d9ac645c","Sign up Newsletter",NULL,NULL,NULL,NULL,NULL,NULL,NULL,"footer","es","2022-10-28","0","0"),
 ("40","copyright_footer","Copyright  2022","Softim",NULL,NULL,NULL,NULL,". All Rights Reserved. Designed by ThemeIM",NULL,"footer","es",NULL,"0","0"),
 ("41","titulo_empresa","About Us","Home",NULL,NULL,NULL,NULL,NULL,NULL,"empresa","es",NULL,"0","0"),
-("42","who_we_are","Who We Are","Softim is not only a globally recognized IT company but also a family filled with talented experts that help global brands, enterprises, mid-size businesses or even startups with innovative solutions.","<p>Softin is not an entity, it&rsquo;s a family that represents togetherness for over two decades of a successful journey. For IndiaNICians, the definition of success is to transcend innovative ideas of people to reality with the help of our tech expertise, this is what we, as a Team, want to be remembered for!</p>\n",NULL,NULL,"or Call ","110 2659 3268 003","Contact us","empresa","es",NULL,"0","0"),
+("42","who_we_are","Who We Are","Softim is not only a globally recognized IT company but also a family filled with talented experts that help global brands, enterprises, mid-size businesses or even startups with innovative solutions.","<p>Softin is not an entity, it&rsquo;s a family that represents togetherness for over two decades of a successful journey. For IndiaNICians, the definition of success is to transcend innovative ideas of people to reality with the help of our tech expertise, this is what we, as a Team, want to be remembered for!</p>\n\n",NULL,NULL,"or Call ","110 2659 3268 003","Contact us","empresa","es",NULL,"0","0"),
 ("43","video_we","video who we are","Softim it solution Softim it solution Softim it solution Softim it solution",NULL,NULL,NULL,NULL,NULL,"https://www.youtube.com/embed/LRhrNC-OC0Y","empresa","es","2022-10-28","0","0"),
 ("44","titulo_agency","Softim is a digital agency that offers a wide scale of creative services, including brand development online marketing and lots more.","AGENCY",NULL,NULL,NULL,NULL,NULL,NULL,"empresa","es",NULL,"0","0"),
 ("45","511a1ad0cc","Around The World","25",NULL,NULL,NULL,"0","+",NULL,"empresa","es",NULL,"0","1"),
@@ -23887,7 +23895,61 @@ INSERT INTO `contenidos` VALUES("4","slider-inicio","SLIDER",NULL,NULL,NULL,NULL
 ("50","afe1fe5c50","Mail Us","softim@yahoo.com",NULL,NULL,NULL,"las la-envelope-open-text",NULL,NULL,"contacto","es",NULL,"0","1"),
 ("51","7ed7666308","Call Us","+1 (900) 696 3600",NULL,NULL,NULL,"las la-phone",NULL,NULL,"contacto","es","2022-10-28","0","1"),
 ("52","0837d6e5df","Visit Our Office","72 Main Drive, Calibry, FL",NULL,NULL,NULL,"las la-map-marked-alt",NULL,NULL,"contacto","es","2022-10-28","0","1"),
-("53","mapa","mapa",NULL,NULL,NULL,NULL,NULL,NULL,"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3070.1899657893728!2d90.42380431666383!3d23.779746865573756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7499f257eab%3A0xe6b4b9eacea70f4a!2sManama+Tower!5e0!3m2!1sen!2sbd!4v1561542597668!5m2!1sen!2sbd","contacto","es","2022-10-28","0","0");
+("53","mapa","mapa",NULL,NULL,NULL,NULL,NULL,NULL,"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3070.1899657893728!2d90.42380431666383!3d23.779746865573756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7499f257eab%3A0xe6b4b9eacea70f4a!2sManama+Tower!5e0!3m2!1sen!2sbd!4v1561542597668!5m2!1sen!2sbd","contacto","es","2022-10-28","0","0"),
+("54","742038848d","Services","Home",NULL,NULL,NULL,"Service","Learn More",NULL,"servicios","es",NULL,"0","1"),
+("55","be3b009d94","QA & Testing",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios","es","2022-10-28","0","0"),
+("56","524103a9a9","Business Analysis",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios","es","2022-10-28","0","0"),
+("57","e2053cca9e","Data Security",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios","es","2022-10-28","0","0"),
+("58","0cab65f499","IT Management",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios","es","2022-10-28","0","0"),
+("59","c09709bff5","Web Development",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios","es","2022-10-28","0","0"),
+("60","e513dcb04e","Search SEO",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios","es","2022-10-28","0","0"),
+("61","ae107da6cc","Digital Marketing",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios","es","2022-10-28","0","0"),
+("62","a1ce86111a","Web Design",NULL,"<p>We rank among the best in the US, Argentina, and Ukraine. Our apps get</p>\n",NULL,NULL,NULL,NULL,NULL,"servicios","es","2022-10-28","0","0"),
+("64","ad70434a66","Our Development Process",NULL,NULL,NULL,NULL,NULL,NULL,NULL,"desarrollo","es",NULL,"0","1"),
+("65","2a65da663c","Deliver","04",NULL,NULL,NULL,NULL,NULL,NULL,"desarrollo","es","2022-10-28","0","0"),
+("66","a23eb6cb33","Build","03",NULL,NULL,NULL,NULL,NULL,NULL,"desarrollo","es","2022-10-28","0","0"),
+("67","a0b0e23508","Design","02",NULL,NULL,NULL,NULL,NULL,NULL,"desarrollo","es","2022-10-28","0","0"),
+("68","0e686d9d0b","Discover","01",NULL,NULL,NULL,NULL,NULL,NULL,"desarrollo","es",NULL,"0","0"),
+("69","25013683a9","Gallery","Home ",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es",NULL,"0","1"),
+("70","appdev","App Dev",".appdev",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es","2022-10-28","0","1"),
+("71","marketing","Marketing",".marketing",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es","2022-10-28","0","1"),
+("72","webdev","Webdev",".webdev",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es","2022-10-28","0","1"),
+("73","design","Design",".design",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es","2022-10-28","0","1"),
+("74","all","All",NULL,NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es","2022-10-28","0","1"),
+("75","dace9595ab","foto 8","appdev",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es",NULL,"0","0"),
+("76","3da05c7da2","foto 9","marketing",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es",NULL,"0","0"),
+("77","6345319408","foto 7","webdev",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es",NULL,"0","0"),
+("78","9d4368d602","foto 6","design",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es",NULL,"0","0"),
+("79","76b894d1e3","foto 5","marketing",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es",NULL,"0","0"),
+("80","279e91be9f","foto 4","webdev",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es",NULL,"0","0"),
+("81","9c71d8fa0c","foto 3","design",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es",NULL,"0","0"),
+("82","559f0b7963","foto 2","marketing",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es",NULL,"0","0"),
+("83","d87763ce43","foto 1","marketing",NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es",NULL,"0","0"),
+("84","icon","icon",NULL,NULL,NULL,NULL,NULL,NULL,NULL,"galeria","es","2022-10-28","0","1"),
+("85","blog_titulo","Blog Classic","Home",NULL,NULL,NULL,NULL,NULL,NULL,"blog","es","2022-10-28","0","0"),
+("86","2e266aa130","The 13 Real Traffic Safety Questions We Should Be Asking","Read More ","<p>Integer dis ads se purus sollicitudin dapibus et vivamus pharetra sit integer dictum in dise natoque an mus quis in.</p>\n","fedf0a0aea",NULL," 24th March, 2021","By : Smith Roy",NULL,"blog","es",NULL,"0","0"),
+("87","37bd8b7b89","Guest Profile: Will Thornton, Author Of Are We There Yet?","Read More","<p>Integer dis ads se purus sollicitudin dapibus et vivamus pharetra sit integer dictum in dise natoque an mus quis in.</p>\n","fedf0a0aea",NULL,"24th March, 2021","By : Smith Roy","https://www.youtube.com/embed/6zsr22OeF2I","blog","es",NULL,"0","0"),
+("88","5ae4786c7f","Many Important Brands Have Given Us Their Trust","Read More ","<p>Integer dis ads se purus sollicitudin dapibus et vivamus pharetra sit integer dictum in dise natoque an mus quis in.</p>\n","fedf0a0aea",NULL,"24th March, 2021","By : Smith Roy",NULL,"blog","es",NULL,"0","0"),
+("89","titulo_recientes","Recent Posts",NULL,NULL,NULL,NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("90","abee01088d","What Is Going On In South West London.","24th March, 2022",NULL,"publicaciones_recientes",NULL,NULL,NULL,NULL,"blog","es","2022-10-28","0","0"),
+("91","219f003388","What Is Going On In South West London.","24th March, 2022",NULL,"publicaciones_recientes",NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("92","9eb88beaf3","What Is Going On In South West London.","24th March, 2022",NULL,"publicaciones_recientes",NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("93","deb5da6b13","What Is Going On In South West London.","24th March, 2022",NULL,"publicaciones_recientes",NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("94","093a093037","Business Analysis","4",NULL,"categorias",NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("95","1de4fdaeb9","Business Analysis","4",NULL,"categorias",NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("96","cfc28f05b1","Business Analysis","4",NULL,"categorias",NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("97","e7edacf895","Stock Investment","1",NULL,"categorias",NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("98","4f04e87e04","Business Strategy","5",NULL,"categorias",NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("99","64cb226e9c","Business Analysis","4",NULL,"categorias",NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("100","Categories_titulo","Categories",NULL,NULL,NULL,NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("101","tag_titulo","Tags",NULL,NULL,NULL,NULL,NULL,NULL,NULL,"blog","es","2022-10-29","0","0"),
+("102","1dd02698c6","Office",NULL,NULL,"tags",NULL,NULL,NULL,NULL,"blog","es",NULL,"0","0"),
+("103","d1dee76ee8","manual",NULL,NULL,"tags",NULL,NULL,NULL,NULL,"blog","es","2022-10-29","0","0"),
+("104","0fc5b99f1a","Gallery",NULL,NULL,"tags",NULL,NULL,NULL,NULL,"blog","es","2022-10-29","0","0"),
+("105","cc3126a7bb","newdriver",NULL,NULL,"tags",NULL,NULL,NULL,NULL,"blog","es","2022-10-29","0","0"),
+("106","b358ae22e5","driver",NULL,NULL,"tags",NULL,NULL,NULL,NULL,"blog","es","2022-10-29","0","0"),
+("107","aace8f124c","infobpn",NULL,NULL,"tags",NULL,NULL,NULL,NULL,"blog","es","2022-10-29","0","0"),
+("108","search_titulo","Search",NULL,NULL,NULL,NULL,NULL,NULL,NULL,"blog","es","2022-10-29","0","0");
 INSERT INTO `idiomas` VALUES("11","es","Español","1","1");
 INSERT INTO `imagenes` VALUES("1","assets/archivos/recortadas/smarter-way-to-serve-digital-product-marketing_f2789f4a2b_es.webp","fb2fde97a6","0","es"),
 ("2","assets/archivos/recortadas/slider_8eaf76706c_es.webp","slider-inicio","0","es"),
@@ -23921,7 +23983,36 @@ INSERT INTO `imagenes` VALUES("1","assets/archivos/recortadas/smarter-way-to-ser
 ("39","assets/archivos/recortadas/makingitlooklikereadableenglishlanguage_2ce3d6f980_es.webp","ceb2a0f602","0","es"),
 ("40","assets/archivos/recortadas/itwaspopularisedinthe1960swiththerelease_bbf900bf37_es.webp","3a654b7573","0","es"),
 ("41","assets/archivos/recortadas/copyright2022_320d5f27c7_es.webp","copyright_footer","0","es"),
-("42","assets/archivos/recortadas/whoweare_3499a8a51f_es.webp","who_we_are","0","es");
+("42","assets/archivos/recortadas/whoweare_3499a8a51f_es.webp","who_we_are","0","es"),
+("43","assets/archivos/recortadas/qatesting_89dc1b5a76_es.webp","be3b009d94","0","es"),
+("44","assets/archivos/recortadas/businessanalysis_df63c5dbaa_es.webp","524103a9a9","0","es"),
+("45","assets/archivos/recortadas/datasecurity_6d71dbaf57_es.webp","e2053cca9e","0","es"),
+("46","assets/archivos/recortadas/itmanagement_6a79fbc5c3_es.webp","0cab65f499","0","es"),
+("47","assets/archivos/recortadas/webdevelopment_7f2ce8718f_es.webp","c09709bff5","0","es"),
+("48","assets/archivos/recortadas/searchseo_af3d2d89e9_es.webp","e513dcb04e","0","es"),
+("49","assets/archivos/recortadas/digitalmarketing_c33fb4c010_es.webp","ae107da6cc","0","es"),
+("50","assets/archivos/recortadas/webdesign_cf156ad82b_es.webp","a1ce86111a","0","es"),
+("51","assets/archivos/recortadas/deliver_bc7e567871_es.webp","2a65da663c","0","es"),
+("52","assets/archivos/recortadas/build_df060f5f4b_es.webp","a23eb6cb33","0","es"),
+("53","assets/archivos/recortadas/design_56c78c3cf0_es.webp","a0b0e23508","0","es"),
+("54","assets/archivos/recortadas/discover_6ee86ddf12_es.webp","0e686d9d0b","0","es"),
+("55","assets/archivos/recortadas/foto8_90107cb594_es.webp","dace9595ab","0","es"),
+("56","assets/archivos/recortadas/foto9_2cca22d9ea_es.webp","3da05c7da2","0","es"),
+("57","assets/archivos/recortadas/foto7_859e9ea02d_es.webp","6345319408","0","es"),
+("58","assets/archivos/recortadas/foto6_248eb850d7_es.webp","9d4368d602","0","es"),
+("59","assets/archivos/recortadas/foto5_1eb52d6461_es.webp","76b894d1e3","0","es"),
+("60","assets/archivos/recortadas/foto4_ab3134deb1_es.webp","279e91be9f","0","es"),
+("61","assets/archivos/recortadas/foto3_71bd85a1b7_es.webp","9c71d8fa0c","0","es"),
+("62","assets/archivos/recortadas/foto2_7617e28320_es.webp","559f0b7963","0","es"),
+("63","assets/archivos/recortadas/foto1_3bffe338d0_es.webp","d87763ce43","0","es"),
+("64","assets/archivos/recortadas/icon_550c638bba_es.webp","icon","0","es"),
+("65","assets/archivos/recortadas/the13realtrafficsafetyquestionsweshouldbeasking_b8206e44c1_es.webp","2e266aa130","0","es"),
+("66","assets/archivos/recortadas/guestprofilewillthorntonauthorofarewethereyet_343460af05_es.webp","37bd8b7b89","0","es"),
+("67","assets/archivos/recortadas/manyimportantbrandshavegivenustheirtrust_4c3c6d65d2_es.webp","5ae4786c7f","0","es"),
+("68","assets/archivos/recortadas/whatisgoingoninsouthwestlondon_d97f8b841b_es.webp","abee01088d","0","es"),
+("69","assets/archivos/recortadas/whatisgoingoninsouthwestlondon_0ae4982a0e_es.webp","219f003388","0","es"),
+("70","assets/archivos/recortadas/whatisgoingoninsouthwestlondon_ceab3b9fea_es.webp","9eb88beaf3","0","es"),
+("71","assets/archivos/recortadas/whatisgoingoninsouthwestlondon_5fad0a1f7c_es.webp","deb5da6b13","0","es");
 INSERT INTO `menu` VALUES("44",NULL,"Contenidos","plus-alt","#Contenidos","_self","admin","2","1","1","es"),
 ("46",NULL,"Ecommerce","us-dollar","#Ecommerce","_self","admin","4","1","1","es"),
 ("57",NULL,"Categorias","thumbnails-big","#Categorias","_self","admin","6","1","1","es"),
@@ -23967,7 +24058,11 @@ INSERT INTO `menu` VALUES("44",NULL,"Contenidos","plus-alt","#Contenidos","_self
 ("186","66","CONTACTO",NULL,"/index.php?op=contenidos&accion=ver&area=contacto&idioma=es","_self","admin","0","0","1","es"),
 ("190","66","NOVEDADES",NULL,"/index.php?op=contenidos&accion=ver&area=novedades_inicio&idioma=es","_self","admin","0","0","1","es"),
 ("194","66","FOOTER",NULL,"/index.php?op=contenidos&accion=ver&area=footer&idioma=es","_self","admin","0","0","1","es"),
-("200","66","EMPRESA",NULL,"/index.php?op=contenidos&accion=ver&area=empresa&idioma=es","_self","admin","0","0","1","es");
+("200","66","EMPRESA",NULL,"/index.php?op=contenidos&accion=ver&area=empresa&idioma=es","_self","admin","0","0","1","es"),
+("204","66","servicios",NULL,"/index.php?op=contenidos&accion=ver&area=servicios&idioma=es","_self","admin","0","0","1","es"),
+("209","66","SERVICIO DE DESARROLLO",NULL,"/index.php?op=contenidos&accion=ver&area=desarrollo&idioma=es","_self","admin","0","0","1","es"),
+("217","66","GALERIA",NULL,"/index.php?op=contenidos&accion=ver&area=galeria&idioma=es","_self","admin","0","0","1","es"),
+("225","66","BLOG",NULL,"/index.php?op=contenidos&accion=ver&area=blog&idioma=es","_self","admin","0","0","1","es");
 INSERT INTO `roles` VALUES("1","admin-role","desarrollador","1","1","1","44"),
 ("2","admin-role","desarrollador","1","1","1","46"),
 ("3","admin-role","desarrollador","1","1","1","57"),
@@ -24016,7 +24111,11 @@ INSERT INTO `roles` VALUES("1","admin-role","desarrollador","1","1","1","44"),
 ("46","admin-role","desarrollador","1","1","1","186"),
 ("47","admin-role","desarrollador","1","1","1","190"),
 ("48","admin-role","desarrollador","1","1","1","194"),
-("49","admin-role","desarrollador","1","1","1","200");
+("49","admin-role","desarrollador","1","1","1","200"),
+("50","admin-role","desarrollador","1","1","1","204"),
+("51","admin-role","desarrollador","1","1","1","209"),
+("52","admin-role","desarrollador","1","1","1","217"),
+("53","admin-role","desarrollador","1","1","1","225");
 INSERT INTO `roles_admin` VALUES("116","admin-role","39"),
 ("117","admin-role","40"),
 ("120","admin-role","43"),

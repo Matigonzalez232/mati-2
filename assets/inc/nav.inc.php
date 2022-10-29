@@ -16,13 +16,13 @@
 
                                 <li><a <?= CANONICAL == URL . "/" ? "active" : ""; ?> href="<?= URL ?>/empresa.php">About</a></li>
 
-                                <li><a <?= CANONICAL == URL . "/" ? "active" : ""; ?> href="<?= URL ?>/service.html">Services</a></li>
+                                <li><a <?= CANONICAL == URL . "/" ? "active" : ""; ?> href="<?= URL ?>/servicios.php">Services</a></li>
 
 
-                                <li><a <?= CANONICAL == URL . "/" ? "active" : ""; ?> href="<?= URL ?>/portfolio.html">Portfolio</a></li>
+                                <li><a <?= CANONICAL == URL . "/" ? "active" : ""; ?> href="<?= URL ?>/portfolio.php">Portfolio</a></li>
 
 
-                                <li><a <?= CANONICAL == URL . "/" ? "active" : ""; ?> href="<?= URL ?>/blog.html">Blog</a></li>
+                                <li><a <?= CANONICAL == URL . "/" ? "active" : ""; ?> href="<?= URL ?>/blog.php">Blog</a></li>
 
                                 <li></li>
                             </ul>

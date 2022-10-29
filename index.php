@@ -61,7 +61,7 @@ $data_area_novedades = [
     "filter" => ['contenidos.area = "novedades_inicio"']
 
 ];
-
+var_dump(URL);
 
 //cambiar las consultas de inicio para que sea una sola de area ----------------
 $contactar = $contenidos->list($data_contactar, 'es', true);
