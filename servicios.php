@@ -109,6 +109,7 @@ $template->themeInit();
         <div class="row justify-content-center mb-30-none">
             <?php foreach($contenidoServicio as $key => $item){
             if($item['data']['destacado']==1)continue;    
+            $link = URL . "/c/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
             ?>
             <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
                 <div class="service-item three">
@@ -116,10 +117,10 @@ $template->themeInit();
                         <img src="<?= $item['images'][0]['url']?>" alt="icon">
                     </div>
                     <div class="service-content">
-                        <h3 class="title"><a href="service-details.html"><?= $item['data']['titulo']?></a></h3>
-                        <p><?= $item['data']['contenido']?></p>
+                        <h3 class="title"><a href="<?= $link?>"><?= $item['data']['titulo']?></a></h3>
+                        <p><?= $item['data']['description']?></p>
                         <div class="service-btn">
-                            <a href="service-details.html" class="custom-btn"><?= $contenidoServicio['742038848d']['data']['description'] ?> <i class="icon-Group-2361 ml-2"></i></a>
+                            <a href="<?= $link?>" class="custom-btn"><?= $contenidoServicio['742038848d']['data']['description'] ?> <i class="icon-Group-2361 ml-2"></i></a>
                         </div>
                     </div>
                 </div>

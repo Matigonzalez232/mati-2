@@ -29,6 +29,9 @@ RewriteRule ^c/(.*)/(.*)/(.*)$ ./contenido.php?area=$1&titulo=$2&cod=$3 [QSA,L]
 RewriteRule ^c/(.*)$ ./contenidos.php?area=$1 [QSA,L]
 RewriteRule ^test/(.*)$ ./contenidos.php?area=$1 [QSA,L]
 
+#Blog
+RewriteRule ^blog_c/(.*)/(.*)/(.*)$ ./blog_c.php?area=$1&titulo=$2&cod=$3 [QSA,L]
+
 #Productos
 RewriteRule ^producto/(.*)/(.*)$ ./producto.php?cod=$2
 RewriteRule ^productos/t/(.*)/(.*)/(.*)/(.*)/(.*)/(.*)$ ./productos.php?categoria=$2&subcategoria=$4&tercercategoria=$6 [QSA,L]

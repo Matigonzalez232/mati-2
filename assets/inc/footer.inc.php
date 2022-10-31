@@ -81,9 +81,9 @@ $footer = $contenidos->list($data_area_footer, 'es', false);
                             <ul class="footer-list">
                                 <li><a href="<?= URL ?>">Home</a></li>
                                 <li><a href="<?= URL ?>/empresa.php">About</a></li>
-                                <li><a href="<?= URL ?>/c/servicios">Services</a></li>
-                                <li><a href="<?= URL ?>/portfolios">Portfolio</a></li>
-                                <li><a href="<?= URL ?>/blogs">Blog</a></li>
+                                <li><a href="<?= URL ?>/servicios.php">Services</a></li>
+                                <li><a href="<?= URL ?>/portfolio.php">Portfolio</a></li>
+                                <li><a href="<?= URL ?>/blog.php">Blog</a></li>
                             </ul>
                         </div>
                     </div>

@@ -118,7 +118,7 @@ $template->themeInit();
                     <p class="para"><?= $contenidoEmpresa['who_we_are']["data"]['subtitulo']?></p>
                     <p><?= $contenidoEmpresa['who_we_are']["data"]['contenido']?></p>
                     <div class="about-btn two">
-                        <a href="contact.html" class="btn--base"><?= $contenidoEmpresa['who_we_are']["data"]['link']?></a>
+                        <a href="<?= URL ?>/contacto.php" class="btn--base"><?= $contenidoEmpresa['who_we_are']["data"]['link']?></a>
                         <span><?= $contenidoEmpresa['who_we_are']["data"]['keywords']?> <a href="tel:<?= $contenidoEmpresa['who_we_are']["data"]['description']?>">+<?= $contenidoEmpresa['who_we_are']["data"]['description']?></a></span>
                     </div>
                 </div>

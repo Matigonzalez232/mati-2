@@ -5,7 +5,7 @@ $contenidos = new Clases\Contenidos();
 $template = new Clases\TemplateSite();
 $f = new Clases\PublicFunction();
 $template->themeInit();
-
+//<<---------------------LINEA 769 FALTA CAMBIAR UN LINK---------------->>
 $data_introduccion = [
     "filter" => ['contenidos.cod = "inicio-introduccion"']
 ];
@@ -162,7 +162,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                                 <h3 class="title"><?= $inicio_introduccion['data']['contenido'] ?></h3>
                                 <p><?= $inicio_introduccion['data']['description'] ?></p>
                                 <div class="banner-left-btn">
-                                    <a href="contact.html" class="btn--base active">Contact Us</a>
+                                    <a href="<?= URL?>/contacto.php" class="btn--base active">Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -210,7 +210,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                     <p><?= $inicio_nosotros_somos['data']['contenido'] ?></p>
                     <div class="statistics-left-btn">
                         <!-- agregar el link -->
-                        <a href="about.html" class="custom-btn">Know More</a>
+                        <a href="<?= URL?>/empresa.php" class="custom-btn">Know More</a>
                     </div>
                 </div>
             </div>
@@ -275,10 +275,10 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
             </div>
             <div class="col-xl-6 col-lg-6 mb-30">
                 <div class="overview-content">
-                    <h2 class="title">We specialize in the web development</h2>
-                    <p>Our motto includes the core values of the company and describes our philosophy. We moved heaven and earth to make the company’s motto applicable to every member of the team.</p>
+                    <h2 class="title"><?= $introduccion_servicios['data']['titulo'] ?></h2>
+                    <p><?= $introduccion_servicios['images']['contenido'] ?></p>
                     <div class="overview-btn">
-                        <a href="service.html" class="btn--base active">View All Services</a>
+                        <a href="<?= URL?>/servicios.php" class="btn--base active"><?= $introduccion_servicios['images']['link'] ?></a>
                     </div>
                 </div>
             </div>
@@ -309,7 +309,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                             <h3 class="title"><?= $item['data']['titulo'] ?></h3>
                             <p><?= $item['data']['contenido'] ?></p>
                             <div class="service-btn">
-                                <a href="service.html" class="custom-btn">Learn More <i class="icon-Group-2361 ml-2"></i></a>
+                                <a href="<?= URL?>/servicios.php" class="custom-btn">Learn More <i class="icon-Group-2361 ml-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -756,6 +756,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
         <div class="row justify-content-center mb-30-none">
             <?php foreach ($novedades as $key => $item) {
                 if ($item['data']['destacado'] == 1) continue;
+                $link = URL . "/blog_c/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
             ?>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
                     <div class="blog-item">
@@ -766,7 +767,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                             <div class="blog-category">
                                 <span><?= $item['data']['subtitulo'] ?></span>
                             </div>
-                            <h3 class="title"><a href="blog-details.html"><?= $item['data']['titulo'] ?></a></h3>
+                            <h3 class="title"><a href="<?= $link?>"><?= $item['data']['titulo'] ?></a></h3>
                             <p><?= $item['data']['contenido'] ?></p>
                             <div class="blog-post-meta two">
                                 <span class="user"><?= $item['data']['description'] ?></span>
