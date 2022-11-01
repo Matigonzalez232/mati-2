@@ -756,7 +756,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
         <div class="row justify-content-center mb-30-none">
             <?php foreach ($novedades as $key => $item) {
                 if ($item['data']['destacado'] == 1) continue;
-                $link = URL . "/blog_c/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
+                $link = URL . "/blog_details/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
             ?>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 mb-30">
                     <div class="blog-item">

@@ -61,7 +61,7 @@ $template->themeInit();
                         <div class="breadcrumb-area">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="<?= URL?>">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><?= $contenidoData['data']['titulo'] ?></li>
                                 </ol>
                             </nav>
@@ -104,21 +104,7 @@ $template->themeInit();
                         <?= $contenidoData['data']['contenido'] ?>
 
 
-                            <blockquote class="two">
-                                <div class="quote-area d-flex flex-wrap">
-                                    <div class="quote-icon">
-                                        <img src="<?= URL ?>/assets/theme/assets/images/client/quote-2.png" alt="quote">
-                                    </div>
-                                    <div class="quote-shape">
-                                        <img src="<?= URL ?>/assets/theme/assets/images/element/element-66.png" alt="element">
-                                    </div>
-                                    <div class="quote-content-area">
-                                        <p class="quote-content">Web optimization alludes to an umbrella of strategies that upgrade your site’s positioning for significant list items. A higher positioning in list items.</p>
-                                    </div>
-                                </div>
-                            </blockquote>
-                            <p>Pick our website architecture administrations, and your business can depend on 100% straightforwardness. From our customized statements to our underlying plans, our group gives your organization complete admittance to our website
-                                Get free, exact, and moment quote for our website architecture and advancement administrations with our simple to-utilize number cruncher. Our group tailors our website composition administrations to your organization and its one of a kind requirements. That is the reason you can redo each component of our administrations to your organization, items or administrations, and objectives.</p>
+                            
                             <div class="contact-section two">
                                 <div class="contact-area">
                                     <div class="contact-element-five">

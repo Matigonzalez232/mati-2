@@ -82,10 +82,13 @@ $template->themeInit();
 <section class="blog-section ptb-120">
     <div class="container">
         <div class="row justify-content-center mb-60-none">
+
+            <!-------------- CONTENIDOS -------------->
             <div class="col-xl-8 col-lg-8 mb-60">
                 <div class="row justify-content-center mb-60-none">
                     <?php foreach ($contenidoBlog as $key => $item) {
                         if ($item['data']['categoria'] != "fedf0a0aea") continue;
+                        $link = URL . "/blog_details/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
                         if (isset($item['data']['link'])) {
                     ?>
                             <div class="col-xl-12 mb-60">
@@ -105,10 +108,10 @@ $template->themeInit();
                                             <span class="user"><?= $item['data']['description'] ?></span>
                                             <span class="category two"><?= $item['data']['keywords'] ?></span>
                                         </div>
-                                        <h3 class="title"><a href="blog-details.html"><?= $item['data']['titulo'] ?></a></h3>
-                                        <p><?= $item['data']['contenido'] ?></p>
+                                        <h3 class="title"><a href="<?= $link ?>"><?= $item['data']['titulo'] ?></a></h3>
+                                        <p><?= $item['data']['subtitulo'] ?></p>
                                         <div class="blog-btn">
-                                            <a href="blog-details.html" class="custom-btn"><?= $item['data']['subtitulo'] ?> <i class="fas fa-arrow-right ml-2"></i></a>
+                                            <a href="<?= $link ?>" class="custom-btn">Read More <i class="fas fa-arrow-right ml-2"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -126,10 +129,10 @@ $template->themeInit();
                                             <span class="user"><?= $item['data']['description'] ?></span>
                                             <span class="category two"><?= $item['data']['keywords'] ?></span>
                                         </div>
-                                        <h3 class="title"><a href="blog-details.html"><?= $item['data']['titulo'] ?></a></h3>
-                                        <p><?= $item['data']['contenido'] ?></p>
+                                        <h3 class="title"><a href="<?= $link ?>"><?= $item['data']['titulo'] ?></a></h3>
+                                        <p><?= $item['data']['subtitulo'] ?></p>
                                         <div class="blog-btn">
-                                            <a href="<?= URL ?>/blog.php" class="custom-btn"><?= $item['data']['subtitulo'] ?> <i class="fas fa-arrow-right ml-2"></i></a>
+                                            <a href="<?= $link ?>" class="custom-btn">Read More <i class="fas fa-arrow-right ml-2"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -138,9 +141,11 @@ $template->themeInit();
                     } ?>
                 </div>
             </div>
+            <!-------------- FIN CONTENIDOS -------------->
 
             <div class="col-xl-4 col-lg-4 mb-60">
                 <div class="sidebar">
+                    <!-------------- BARRA DE BUSQUEDAS -------------->
                     <div class="widget-box mb-30">
                         <h4 class="widget-title"><?= $contenidoBlog['search_titulo']['data']['titulo'] ?></h4>
                         <div class="search-widget-box">
@@ -150,11 +155,14 @@ $template->themeInit();
                             </form>
                         </div>
                     </div>
+                    <!-------------- FIN BARRA DE BUSQUEDAS -------------->
+                    <!-------------- CONTENIDOS RECIENTES -------------->
                     <div class="widget-box mb-30">
                         <h4 class="widget-title"><?= $contenidoBlog['titulo_recientes']['data']['titulo'] ?></h4>
                         <div class="popular-widget-box">
                             <?php foreach ($contenidoBlog as $key => $item) {
                                 if ($item['data']['categoria'] != "publicaciones_recientes") continue;
+                                $link = URL . "/blog_details/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
                             ?>
                                 <div class="single-popular-item d-flex flex-wrap align-items-center">
                                     <div class="popular-item-thumb">
@@ -162,42 +170,19 @@ $template->themeInit();
                                     </div>
                                     <div class="popular-item-content">
                                         <span class="blog-date"><?= $item['data']['subtitulo'] ?></span>
-                                        <h5 class="title"><a href="<?= URL ?>/blog.php"><?= $item['data']['titulo'] ?></a></h5>
+                                        <h5 class="title"><a href="<?= $link ?>"><?= $item['data']['titulo'] ?></a></h5>
                                     </div>
                                 </div>
                             <?php } ?>
                         </div>
                     </div>
-                    <div class="widget-box mb-30">
-                        <h4 class="widget-title"><?= $contenidoBlog['Categories_titulo']['data']['titulo'] ?></h4>
-                        <div class="category-widget-box">
-                            <ul class="category-list">
-                                <?php foreach ($contenidoBlog as $key => $item) {
-                                    if ($item['data']['categoria'] != "categorias") continue;
-                                ?>
-                                    <li><a href="#0"><i class="fas fa-chevron-right"></i> <?= $item['data']['titulo'] ?> <span><?= $item['data']['subtitulo'] ?></span></a></li>
-                                <?php } ?>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="widget-box">
-                        <h4 class="widget-title"><?= $contenidoBlog['tag_titulo']['data']['titulo'] ?></h4>
-                        <div class="tag-widget-box">
-                            <ul class="tag-list">
-                                <?php foreach ($contenidoBlog as $key => $item) {
-                                    if ($item['data']['categoria'] != "tags") continue;
+                    <!-------------- FIN CONTENIDOS RECIENTES -------------->
 
-                                ?>
-                                    <li><a href="#0"><?= $item['data']['titulo']?></a></li>
-                                <?php } ?>
-
-                            </ul>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
-        <nav>
+        <!-- poner la paginacion que sirva -->
+        <!-- <nav>          
             <ul class="pagination">
                 <li class="page-item prev">
                     <a class="page-link" href="#" rel="prev" aria-label="Prev &raquo;">PREV</a>
@@ -211,7 +196,7 @@ $template->themeInit();
                     <a class="page-link" href="#" rel="next" aria-label="Next &raquo;">NEXT</a>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
     </div>
 </section>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
