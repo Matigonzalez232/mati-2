@@ -4,6 +4,9 @@ Config\Autoload::run();
 $contenidos = new Clases\Contenidos();
 $template = new Clases\TemplateSite();
 $f = new Clases\PublicFunction();
+$config = new Clases\Config();
+$enviar = new Clases\Email();
+$emailData = $config->viewEmail();
 $template->themeInit();
 //<<---------------------LINEA 769 FALTA CAMBIAR UN LINK---------------->>
 $data_introduccion = [
@@ -162,7 +165,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                                 <h3 class="title"><?= $inicio_introduccion['data']['contenido'] ?></h3>
                                 <p><?= $inicio_introduccion['data']['description'] ?></p>
                                 <div class="banner-left-btn">
-                                    <a href="<?= URL?>/contacto.php" class="btn--base active">Contact Us</a>
+                                    <a href="<?= URL ?>/contacto.php" class="btn--base active">Contact Us</a>
                                 </div>
                             </div>
                         </div>
@@ -210,7 +213,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                     <p><?= $inicio_nosotros_somos['data']['contenido'] ?></p>
                     <div class="statistics-left-btn">
                         <!-- agregar el link -->
-                        <a href="<?= URL?>/empresa.php" class="custom-btn">Know More</a>
+                        <a href="<?= URL ?>/empresa.php" class="custom-btn">Know More</a>
                     </div>
                 </div>
             </div>
@@ -278,7 +281,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                     <h2 class="title"><?= $introduccion_servicios['data']['titulo'] ?></h2>
                     <p><?= $introduccion_servicios['images']['contenido'] ?></p>
                     <div class="overview-btn">
-                        <a href="<?= URL?>/servicios.php" class="btn--base active"><?= $introduccion_servicios['images']['link'] ?></a>
+                        <a href="<?= URL ?>/servicios.php" class="btn--base active"><?= $introduccion_servicios['images']['link'] ?></a>
                     </div>
                 </div>
             </div>
@@ -309,7 +312,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                             <h3 class="title"><?= $item['data']['titulo'] ?></h3>
                             <p><?= $item['data']['contenido'] ?></p>
                             <div class="service-btn">
-                                <a href="<?= URL?>/servicios.php" class="custom-btn">Learn More <i class="icon-Group-2361 ml-2"></i></a>
+                                <a href="<?= URL ?>/servicios.php" class="custom-btn">Learn More <i class="icon-Group-2361 ml-2"></i></a>
                             </div>
                         </div>
                     </div>
@@ -665,7 +668,49 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                         <img src="<?= URL ?>/assets/theme/assets/images/contact.png" alt="contact">
                     </div>
                 </div>
+
                 <div class="col-xl-7 col-lg-7 mb-30">
+                    <?php
+                    if (isset($_POST['submit'])) {
+
+                        $nombre = $_POST["nombre"];
+                        $telefono = $_POST["telefono"];
+                        $email = $_POST["email"];
+                        $asunto = $_POST["asunto"];
+                        $mensaje = $_POST["mensaje"];
+                        // isset($_POST) ? var_dump($_POST) : "";
+                        if (!empty($nombre) && !empty($email) && !empty($mensaje) && !empty($telefono)  && !empty($asunto)) {
+
+                            //MENSAJE A USUARIO
+                            $mensajeFinal = "<b>Gracias por realizar tu consulta, te contactaremos a la brevedad.</b><br/>";
+                            $mensajeFinal .= "<b>Consulta</b>: " . $mensaje . "<br/>";
+
+                            $enviar->set("asunto", "Realizaste tu consulta.");
+                            $enviar->set("receptor", $email);
+                            $enviar->set("emisor", $emailData['data']['remitente']);
+                            $enviar->set("mensaje", $mensajeFinal);
+                            // $enviar->emailEnviar();
+
+                            //MENSAJE AL ADMIN
+                            $mensajeFinalAdmin = "<b>Nueva consulta desde la web.</b><br/>";
+                            $mensajeFinalAdmin .= "<b>Nombre</b>: " . $nombre . " <br/>";
+                            $mensajeFinalAdmin .= "<b>telefono</b>: " . $telefono . "<br/>";
+                            $mensajeFinalAdmin .= "<b>Email</b>: " . $email . "<br/>";
+                            $mensajeFinalAdmin .= "<b>Asunto</b>: " . $asunto . "<br/>";
+                            $mensajeFinalAdmin .= "<b>Consulta</b>: " . $mensaje . "<br/>";
+
+                            $enviar->set("asunto", "Nueva consulta desde la web :" . $asunto);
+                            $enviar->set("receptor", $emailData['data']['remitente']);
+                            $enviar->set("mensaje", $mensajeFinalAdmin);
+                            $enviar->emailEnviar();
+                            //mensaje de success
+                            echo "<div class='alert alert-success'><p>Se ha enviado el email</p></div>";
+                        } else {
+                            //echo error
+                            echo "<div class='alert alert-danger'>fallo</div>";
+                        }
+                    }
+                    ?>
                     <div class="contact-form-area">
                         <div class="contact-form-header">
                             <div class="left">
@@ -692,20 +737,20 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                                 </div>
                             </div>
                         </div>
-                        <form class="contact-form">
+                        <form class="contact-form" method="post" role="form">
                             <div class="row justify-content-center mb-30-none">
                                 <div class="col-xl-6 col-lg-6 form-group">
-                                    <input type="text" class="form--control" placeholder="Your Name">
+                                    <input type="text" class="form--control" name="nombre" placeholder="Your Name">
                                 </div>
                                 <div class="col-xl-6 col-lg-6 form-group">
-                                    <input type="email" class="form--control" placeholder="Your Email">
+                                    <input type="email" class="form--control" name="email" placeholder="Your Email">
                                 </div>
                                 <div class="col-xl-6 col-lg-6 form-group">
-                                    <input type="text" class="form--control" placeholder="Phone Number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+                                    <input type="text" class="form--control" name="telefono" placeholder="Phone Number" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
                                 </div>
                                 <div class="col-xl-6 col-lg-6 form-group">
                                     <div class="contact-select">
-                                        <select class="form--control">
+                                        <select class="form--control" name="asunto">
                                             <option value="1">Service Required</option>
                                             <option value="2">Web Design</option>
                                             <option value="3">Digital Marketing</option>
@@ -715,14 +760,14 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                                     </div>
                                 </div>
                                 <div class="col-xl-12 form-group">
-                                    <textarea class="form--control" placeholder="Write Message..."></textarea>
+                                    <textarea name="mensaje" class="form--control" placeholder="Write Message..."></textarea>
                                 </div>
                                 <div class="col-xl-12 form-group custom-form-group mt-20">
                                     <div class="form-group custom-check-group">
                                         <input type="checkbox" id="level-1">
                                         <label for="level-1">I'm Agree With <a href="#0" class="text--base">Terms & Conditions</a></label>
                                     </div>
-                                    <button type="submit" class="btn--base">Send Message</button>
+                                    <button type="submit" name="submit" class="btn--base">Send Message</button>
                                 </div>
                             </div>
                         </form>
@@ -767,7 +812,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                             <div class="blog-category">
                                 <span><?= $item['data']['subtitulo'] ?></span>
                             </div>
-                            <h3 class="title"><a href="<?= $link?>"><?= $item['data']['titulo'] ?></a></h3>
+                            <h3 class="title"><a href="<?= $link ?>"><?= $item['data']['titulo'] ?></a></h3>
                             <p><?= $item['data']['contenido'] ?></p>
                             <div class="blog-post-meta two">
                                 <span class="user"><?= $item['data']['description'] ?></span>

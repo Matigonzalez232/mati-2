@@ -4,9 +4,9 @@ namespace Clases;
 
 class TemplateSite
 {
-    public $title = '';
+    public $title = 'pagina mati-2';
     public $keywords = '';
-    public $description = '';
+    public $description = 'esta es una descripcion de la pagina y la cual debe llegar a 160 para que sirva en la extencion para determinar el rendimiento de esta pagina en seo, esto es demasiado corto como descripcion';
     public $imagen = LOGO;
     public $body = '';
 
