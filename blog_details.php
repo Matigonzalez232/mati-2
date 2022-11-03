@@ -5,7 +5,9 @@ Config\Autoload::run();
 $template = new Clases\TemplateSite();
 $f = new Clases\PublicFunction();
 $contenidos = new Clases\Contenidos();
-
+$config = new Clases\Config();
+$enviar = new Clases\Email();
+$emailData = $config->viewEmail();
 $filter = [];
 
 isset($_GET["area"]) ?  $filter[] = "contenidos.area = '" . $f->antihack_mysqli($_GET["area"]) . "'" : '';
@@ -66,7 +68,7 @@ $template->themeInit();
                         <div class="breadcrumb-area">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                    <li class="breadcrumb-item"><a href="<?= URL?>">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="<?= URL ?>">Home</a></li>
                                     <li class="breadcrumb-item active" aria-current="page"><?= $contenidoData['data']['titulo'] ?></li>
                                 </ol>
                             </nav>
@@ -151,7 +153,7 @@ $template->themeInit();
                                     </div>
                                 </blockquote>
                                 <p><?= $contenidoBlogPrincipal['a135f343aa']['data']['contenido'] ?></p>
-                                
+
                                 <div class="blog-related-area">
                                     <div class="row">
                                         <div class="col-xl-12">
@@ -175,25 +177,25 @@ $template->themeInit();
                                             <div class="blog-slider-area">
                                                 <div class="blog-slider">
                                                     <div class="swiper-wrapper">
-                                                        <?php foreach($contenidoBlogPrincipal as $key => $item){
-                                                        if ($item['data']['subcategoria'] != "mejor_valorados") continue;
-                                                        $link = URL . "/blog_details/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
+                                                        <?php foreach ($contenidoBlogPrincipal as $key => $item) {
+                                                            if ($item['data']['subcategoria'] != "mejor_valorados") continue;
+                                                            $link = URL . "/blog_details/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
                                                         ?>
-                                                        <div class="swiper-slide">
-                                                            <div class="blog-item">
-                                                                <div class="blog-thumb">
-                                                                    <img src="<?= $item['images'][0]['url'] ?>" alt="blog">
-                                                                </div>
-                                                                <div class="blog-content">
-                                                                    <div class="blog-post-meta">
-                                                                        <span class="user"><?= $item['data']['description'] ?></span>
-                                                                        <span class="category two"> <?= $item['data']['keywords'] ?></span>
+                                                            <div class="swiper-slide">
+                                                                <div class="blog-item">
+                                                                    <div class="blog-thumb">
+                                                                        <img src="<?= $item['images'][0]['url'] ?>" alt="blog">
                                                                     </div>
-                                                                    <h3 class="title"><a href="<?= $link?>"><?= $item['data']['titulo'] ?></a></h3>
+                                                                    <div class="blog-content">
+                                                                        <div class="blog-post-meta">
+                                                                            <span class="user"><?= $item['data']['description'] ?></span>
+                                                                            <span class="category two"> <?= $item['data']['keywords'] ?></span>
+                                                                        </div>
+                                                                        <h3 class="title"><a href="<?= $link ?>"><?= $item['data']['titulo'] ?></a></h3>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                        <?php }?>
+                                                        <?php } ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -201,24 +203,62 @@ $template->themeInit();
                                     </div>
                                 </div>
                                 <!-------------- FIN CONTENIDO -------------->
-                                
+
                                 <!-------------- FORMULARIO -------------->
                                 <div class="blog-comment-area">
+                                    <?php
+                                    if (isset($_POST['submit'])) {
+
+                                        $nombre = $_POST["nombre"];
+                                        $email = $_POST["email"];
+                                        $asunto = "Comentarios";
+                                        $mensaje = $_POST["mensaje"];
+                                        if (!empty($nombre) && !empty($email) && !empty($mensaje)) {
+                                            // isset($_POST) ? var_dump($_POST) : "";
+                                            //MENSAJE A USUARIO
+                                            $mensajeFinal = "<b>Gracias por realizar tu consulta, te contactaremos a la brevedad.</b><br/>";
+                                            $mensajeFinal .= "<b>Consulta</b>: " . $mensaje . "<br/>";
+
+                                            $enviar->set("asunto", "Realizaste tu consulta.");
+                                            $enviar->set("receptor", $email);
+                                            $enviar->set("emisor", $emailData['data']['remitente']);
+                                            $enviar->set("mensaje", $mensajeFinal);
+                                            $enviar->emailEnviar();
+
+                                            //MENSAJE AL ADMIN
+                                            $mensajeFinalAdmin = "<b>Nueva consulta desde la web.</b><br/>";
+                                            $mensajeFinalAdmin .= "<b>Nombre</b>: " . $nombre . " <br/>";
+                                            $mensajeFinalAdmin .= "<b>Email</b>: " . $email . "<br/>";
+                                            $mensajeFinalAdmin .= "<b>Asunto</b>: " . $asunto . "<br/>";
+                                            $mensajeFinalAdmin .= "<b>Consulta</b>: " . $mensaje . "<br/>";
+
+                                            $enviar->set("asunto", "Nueva consulta desde la web :" . $asunto);
+                                            $enviar->set("receptor", $emailData['data']['remitente']);
+                                            $enviar->set("mensaje", $mensajeFinalAdmin);
+                                            $enviar->emailEnviar();
+                                            //mensaje de success
+                                            echo "<div class='alert alert-success'><p>Se ha enviado el email</p></div>";
+                                        } else {
+                                            //echo error
+                                            echo "<div class='alert alert-danger'>fallo</div>";
+                                        }
+                                    }
+                                    ?>
                                     <h3 class="title">Leave A Comments</h3>
                                     <p>Your email address will not be published. Required fields are marked *</p>
-                                    <form class="comment-form">
+                                    <form class="comment-form" method="post" role="form">
                                         <div class="row justify-content-center mb-25-none">
                                             <div class="col-xl-6 col-lg-6 form-group">
-                                                <input type="text" name="name" class="form--control" placeholder="Your name*">
+                                                <input type="text" name="nombre" class="form--control" placeholder="Your name*">
                                             </div>
                                             <div class="col-xl-6 col-lg-6 form-group">
                                                 <input type="email" name="email" class="form--control" placeholder="Your email*">
                                             </div>
                                             <div class="col-lg-12 form-group">
-                                                <textarea class="form--control" placeholder="Write message*"></textarea>
+                                                <textarea class="form--control" name="mensaje" placeholder="Write message*"></textarea>
                                             </div>
                                             <div class="col-lg-12 form-group">
-                                                <button type="submit" class="btn--base mt-10">Submit Now <i class="fas fa-arrow-right ml-2"></i></button>
+                                                <button type="submit" name="submit" class="btn--base mt-10">Submit Now <i class="fas fa-arrow-right ml-2"></i></button>
                                             </div>
                                         </div>
                                     </form>
@@ -229,7 +269,7 @@ $template->themeInit();
                     </div>
                 </div>
             </div>
-            
+
             <div class="col-xl-4 col-lg-4 mb-60">
 
                 <div class="sidebar">

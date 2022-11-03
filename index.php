@@ -47,7 +47,7 @@ $data_contactar = [
 ];
 $data_area_team = [
     "images" => true,
-    "filter" => ['contenidos.area = "testimonios"']
+    "filter" => ['contenidos.area = "equipo"']
 
 ];
 $data_testimonios = [
@@ -279,9 +279,9 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
             <div class="col-xl-6 col-lg-6 mb-30">
                 <div class="overview-content">
                     <h2 class="title"><?= $introduccion_servicios['data']['titulo'] ?></h2>
-                    <p><?= $introduccion_servicios['images']['contenido'] ?></p>
+                    <p><?= $introduccion_servicios['data']['contenido'] ?></p>
                     <div class="overview-btn">
-                        <a href="<?= URL ?>/servicios.php" class="btn--base active"><?= $introduccion_servicios['images']['link'] ?></a>
+                        <a href="<?= URL ?>/servicios.php" class="btn--base active"><?= $introduccion_servicios['data']['link'] ?></a>
                     </div>
                 </div>
             </div>
@@ -348,7 +348,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                         <h2 class="title"><?= $area_portfolio['07e5a9d2a2']['data']['titulo'] ?></h2>
                         <p><?= $area_portfolio['07e5a9d2a2']['data']['contenido'] ?></p>
                         <div class="project-left-btn">
-                            <a href="<?= URL ?>/portfolios" class="btn--base active"><?= $area_portfolio['07e5a9d2a2']['data']['subtitulo'] ?></a>
+                            <a href="<?= URL ?>/portfolio.php" class="btn--base active"><?= $area_portfolio['07e5a9d2a2']['data']['subtitulo'] ?></a>
                         </div>
                     </div>
                 </div>
@@ -370,7 +370,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                                             <img src="<?= $item['images'][0]['url'] ?>" alt="project">
                                             <div class="project-overlay">
                                                 <div class="overlay-content">
-                                                    <h4 class="title"><a href="<?= URL ?>/portfolios"><?= $item['data']['subtitulo'] ?> <br> <?= $item['data']['description'] ?></a></h4>
+                                                    <h4 class="title"><a href="<?= URL ?>/portfolio"><?= $item['data']['subtitulo'] ?> <br> <?= $item['data']['description'] ?></a></h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -429,7 +429,8 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                 <div class="col-xl-6 col-lg-6 mb-30">
                     <div class="about-content">
                         <h2 class="title"><?= $contactar['data']['titulo'] ?><span class="text--base"><?= $contactar['data']['description'] ?></span></h2>
-                        <p class="para"><?= $contactar['data']['contenido'] ?></p>
+                        <p class="para"><?= $contactar['data']['subtitulo'] ?></p>
+                        <p><?= $contactar['data']['contenido'] ?></p>
                         <div class="about-btn">
                             <a href="<?= URL ?>/contacto" class="btn--base"><?= $contactar['data']['keywords'] ?></a>
                         </div>
@@ -506,6 +507,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                         <div class="swiper-wrapper">
                             <?php foreach ($area_team as $key => $item) {
                                 if ($item['data']['destacado'] == 1) continue;
+                                $link = URL . "/team_details/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
                             ?>
                                 <div class="swiper-slide">
                                     <div class="team-item">
@@ -521,7 +523,7 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                                             </div>
                                         </div>
                                         <div class="team-content">
-                                            <h3 class="title"><a href="team-details.html"><?= $item['data']['titulo'] ?></a></h3>
+                                            <h3 class="title"><a href="<?= $link?>"><?= $item['data']['titulo'] ?></a></h3>
                                             <span class="sub-title"><?= $item['data']['subtitulo'] ?></span>
                                         </div>
                                     </div>

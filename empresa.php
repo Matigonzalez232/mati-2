@@ -17,7 +17,7 @@ $data_contactar = [
 ];
 $data_area_team = [
     "images" => true,
-    "filter" => ['contenidos.area = "testimonios"']
+    "filter" => ['contenidos.area = "equipo"']
 
 ];
 $data_testimonios = [
@@ -73,17 +73,17 @@ $template->themeInit();
         <div class="row justify-content-center align-items-center mb-30-none">
             <div class="col-xl-12 mb-30">
                 <div class="banner-content two">
-                   <div class="banner-content-header">
-                        <h2 class="title"><?= $contenidoEmpresa['titulo_empresa']["data"]['titulo']?></h2>
+                    <div class="banner-content-header">
+                        <h2 class="title"><?= $contenidoEmpresa['titulo_empresa']["data"]['titulo'] ?></h2>
                         <div class="breadcrumb-area">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="<?= URL ?>"><?= $contenidoEmpresa['titulo_empresa']["data"]['subtitulo']?></a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><?= $contenidoEmpresa['titulo_empresa']["data"]['titulo']?></li>
+                                    <li class="breadcrumb-item"><a href="<?= URL ?>"><?= $contenidoEmpresa['titulo_empresa']["data"]['subtitulo'] ?></a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><?= $contenidoEmpresa['titulo_empresa']["data"]['titulo'] ?></li>
                                 </ol>
                             </nav>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -108,18 +108,18 @@ $template->themeInit();
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 <section class="about-section ptb-120">
     <div class="about-element-one two">
-        <img src="<?= $contenidoEmpresa['who_we_are']["images"][0]['url']?>" alt="element">
+        <img src="<?= $contenidoEmpresa['who_we_are']["images"][0]['url'] ?>" alt="element">
     </div>
     <div class="container">
         <div class="row justify-content-center mb-30-none">
             <div class="col-xl-6 col-lg-6 mb-30">
                 <div class="about-content two">
-                    <h3 class="title"><?= $contenidoEmpresa['who_we_are']["data"]['titulo']?></h3>
-                    <p class="para"><?= $contenidoEmpresa['who_we_are']["data"]['subtitulo']?></p>
-                    <p><?= $contenidoEmpresa['who_we_are']["data"]['contenido']?></p>
+                    <h3 class="title"><?= $contenidoEmpresa['who_we_are']["data"]['titulo'] ?></h3>
+                    <p class="para"><?= $contenidoEmpresa['who_we_are']["data"]['subtitulo'] ?></p>
+                    <p><?= $contenidoEmpresa['who_we_are']["data"]['contenido'] ?></p>
                     <div class="about-btn two">
-                        <a href="<?= URL ?>/contacto.php" class="btn--base"><?= $contenidoEmpresa['who_we_are']["data"]['link']?></a>
-                        <span><?= $contenidoEmpresa['who_we_are']["data"]['keywords']?> <a href="tel:<?= $contenidoEmpresa['who_we_are']["data"]['description']?>">+<?= $contenidoEmpresa['who_we_are']["data"]['description']?></a></span>
+                        <a href="<?= URL ?>/contacto.php" class="btn--base"><?= $contenidoEmpresa['who_we_are']["data"]['link'] ?></a>
+                        <span><?= $contenidoEmpresa['who_we_are']["data"]['keywords'] ?> <a href="tel:<?= $contenidoEmpresa['who_we_are']["data"]['description'] ?>">+<?= $contenidoEmpresa['who_we_are']["data"]['description'] ?></a></span>
                     </div>
                 </div>
             </div>
@@ -136,11 +136,11 @@ $template->themeInit();
                         <div class="circle">
                             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="300px" height="300px" viewBox="0 0 300 300" enable-background="new 0 0 300 300" xml:space="preserve">
                                 <defs>
-                                    <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 "/>
+                                    <path id="circlePath" d=" M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0 " />
                                 </defs>
-                                <circle cx="150" cy="100" r="75" fill="none"/>
+                                <circle cx="150" cy="100" r="75" fill="none" />
                                 <g>
-                                    <use xlink:href="#circlePath" fill="none"/>
+                                    <use xlink:href="#circlePath" fill="none" />
                                     <text fill="#ffffff">
                                         <textPath xlink:href="#circlePath"><?= $contenidoEmpresa['video_we']['data']['subtitulo'] ?></textPath>
                                     </text>
@@ -178,21 +178,21 @@ $template->themeInit();
                 </div>
                 <div class="agency-statistics-area">
                     <div class="row justify-content-center mb-30-none">
-                        <?php foreach($contenidoEmpresa as $key => $item){
-                        if($item['data']['destacado']!=1)continue;    
+                        <?php foreach ($contenidoEmpresa as $key => $item) {
+                            if ($item['data']['destacado'] != 1) continue;
                         ?>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-30">
-                            <div class="statistics-item">
-                                <div class="statistics-content">
-                                    <div class="odo-area">
-                                        <h3 class="odo-title odometer" data-odometer-final="<?= $item['data']['subtitulo'] ?>"><?= $item['data']['keywords'] ?></h3>
-                                        <h3 class="title"><?= $item['data']['description'] ?></h3>
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-30">
+                                <div class="statistics-item">
+                                    <div class="statistics-content">
+                                        <div class="odo-area">
+                                            <h3 class="odo-title odometer" data-odometer-final="<?= $item['data']['subtitulo'] ?>"><?= $item['data']['keywords'] ?></h3>
+                                            <h3 class="title"><?= $item['data']['description'] ?></h3>
+                                        </div>
+                                        <p><?= $item['data']['titulo'] ?></p>
                                     </div>
-                                    <p><?= $item['data']['titulo'] ?></p>
                                 </div>
                             </div>
-                        </div>
-                        <?php }?>
+                        <?php } ?>
 
                     </div>
                 </div>
@@ -287,6 +287,7 @@ $template->themeInit();
                         <div class="swiper-wrapper">
                             <?php foreach ($area_team as $key => $item) {
                                 if ($item['data']['destacado'] == 1) continue;
+                                $link = URL . "/team_details/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
                             ?>
                                 <div class="swiper-slide">
                                     <div class="team-item">
@@ -302,7 +303,7 @@ $template->themeInit();
                                             </div>
                                         </div>
                                         <div class="team-content">
-                                            <h3 class="title"><a href="team-details.html"><?= $item['data']['titulo'] ?></a></h3>
+                                            <h3 class="title"><a href="<?= $link?>"><?= $item['data']['titulo'] ?></a></h3>
                                             <span class="sub-title"><?= $item['data']['subtitulo'] ?></span>
                                         </div>
                                     </div>

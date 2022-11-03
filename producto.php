@@ -50,7 +50,7 @@ $template->set("imagen", isset($productoData['images'][0]['url']) ? URL . '/' . 
 $template->themeInit();
 ?>
 
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
 
 <!-- Page Title Area Start -->
 <div class="page-title-area pt-150 pb-55">

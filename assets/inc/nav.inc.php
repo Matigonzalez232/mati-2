@@ -29,7 +29,7 @@
                             <div class="header-right">
                                 <div class="header-action-area">
                                     <div class="header-action">
-                                        <a  href="contacto.php" class="btn--base">Contact</a>
+                                        <a href="contacto.php" class="btn--base">Contact</a>
                                     </div>
                                 </div>
                             </div>
@@ -41,11 +41,11 @@
     </div>
 </header>
 
-<!-- <div class="preloader">
+<div class="preloader">
     <div class="drawing" id="loading">
         <div class="loading-dot"></div>
     </div>
-</div> -->
+</div>
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     End Preloader
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->

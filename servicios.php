@@ -25,10 +25,10 @@ $data_area_desarrollo = [
     "filter" =>  ['contenidos.area = "desarrollo"'],
     "images" => true,
 ];
-$contenidoEmpresa = $contenidos->list($data_empresa,'es', false);
+$contenidoEmpresa = $contenidos->list($data_empresa, 'es', false);
 $contactar = $contenidos->list($data_contactar, 'es', true);
 $contenidoServicio = $contenidos->list($data, $_SESSION['lang']); //contenido principal
-$desarrollo=$contenidos->list($data_area_desarrollo, 'es');
+$desarrollo = $contenidos->list($data_area_desarrollo, 'es');
 #Información de cabecera
 $template->set("title", $contenidoServicio['742038848d']["data"]['titulo'] . " | " . TITULO);
 
@@ -59,17 +59,17 @@ $template->themeInit();
         <div class="row justify-content-center align-items-center mb-30-none">
             <div class="col-xl-12 mb-30">
                 <div class="banner-content two">
-                   <div class="banner-content-header">
-                        <h2 class="title"><?= $contenidoServicio['742038848d']['data']['titulo']?></h2>
+                    <div class="banner-content-header">
+                        <h2 class="title"><?= $contenidoServicio['742038848d']['data']['titulo'] ?></h2>
                         <div class="breadcrumb-area">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="<?= URL?>"><?= $contenidoServicio['742038848d']['data']['subtitulo']?></a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><?= $contenidoServicio['742038848d']['data']['keywords']?></li>
+                                    <li class="breadcrumb-item"><a href="<?= URL ?>"><?= $contenidoServicio['742038848d']['data']['subtitulo'] ?></a></li>
+                                    <li class="breadcrumb-item active" aria-current="page"><?= $contenidoServicio['742038848d']['data']['keywords'] ?></li>
                                 </ol>
                             </nav>
                         </div>
-                   </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -107,26 +107,26 @@ $template->themeInit();
     </div>
     <div class="container">
         <div class="row justify-content-center mb-30-none">
-            <?php foreach($contenidoServicio as $key => $item){
-            if($item['data']['destacado']==1)continue;    
-            $link = URL . "/c/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
+            <?php foreach ($contenidoServicio as $key => $item) {
+                if ($item['data']['destacado'] == 1) continue;
+                $link = URL . "/c/" . $item['data']['area'] . "/" . $f->normalizar_link($item['data']['titulo']) . "/" . $item['data']['cod'];
             ?>
-            <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
-                <div class="service-item three">
-                    <div class="service-icon">
-                        <img src="<?= $item['images'][0]['url']?>" alt="icon">
-                    </div>
-                    <div class="service-content">
-                        <h3 class="title"><a href="<?= $link?>"><?= $item['data']['titulo']?></a></h3>
-                        <p><?= $item['data']['description']?></p>
-                        <div class="service-btn">
-                            <a href="<?= $link?>" class="custom-btn"><?= $contenidoServicio['742038848d']['data']['description'] ?> <i class="icon-Group-2361 ml-2"></i></a>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-6 mb-30">
+                    <div class="service-item three">
+                        <div class="service-icon">
+                            <img src="<?= $item['images'][0]['url'] ?>" alt="icon">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="title"><a href="<?= $link ?>"><?= $item['data']['titulo'] ?></a></h3>
+                            <p><?= $item['data']['description'] ?></p>
+                            <div class="service-btn">
+                                <a href="<?= $link ?>" class="custom-btn"><?= $contenidoServicio['742038848d']['data']['description'] ?> <i class="icon-Group-2361 ml-2"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <?php }?>
-            
+            <?php } ?>
+
         </div>
     </div>
 </section>
@@ -150,21 +150,21 @@ $template->themeInit();
                 </div>
                 <div class="agency-statistics-area">
                     <div class="row justify-content-center mb-30-none">
-                        <?php foreach($contenidoEmpresa as $key => $item){
-                        if($item['data']['destacado']!=1)continue;    
+                        <?php foreach ($contenidoEmpresa as $key => $item) {
+                            if ($item['data']['destacado'] != 1) continue;
                         ?>
-                        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-30">
-                            <div class="statistics-item">
-                                <div class="statistics-content">
-                                    <div class="odo-area">
-                                        <h3 class="odo-title odometer" data-odometer-final="<?= $item['data']['subtitulo'] ?>"><?= $item['data']['keywords'] ?></h3>
-                                        <h3 class="title"><?= $item['data']['description'] ?></h3>
+                            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-30">
+                                <div class="statistics-item">
+                                    <div class="statistics-content">
+                                        <div class="odo-area">
+                                            <h3 class="odo-title odometer" data-odometer-final="<?= $item['data']['subtitulo'] ?>"><?= $item['data']['keywords'] ?></h3>
+                                            <h3 class="title"><?= $item['data']['description'] ?></h3>
+                                        </div>
+                                        <p><?= $item['data']['titulo'] ?></p>
                                     </div>
-                                    <p><?= $item['data']['titulo'] ?></p>
                                 </div>
                             </div>
-                        </div>
-                        <?php }?>
+                        <?php } ?>
 
                     </div>
                 </div>
@@ -185,36 +185,36 @@ $template->themeInit();
         <div class="row justify-content-center">
             <div class="col-xl-7 col-lg-8 text-center">
                 <div class="section-header">
-                    <h2 class="section-title mb-0"><?= $desarrollo['ad70434a66']['data']['titulo']?></h2>
+                    <h2 class="section-title mb-0"><?= $desarrollo['ad70434a66']['data']['titulo'] ?></h2>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center mb-30-none">
-            <?php foreach ($desarrollo as $key => $item){ 
-            if($item['data']['destacado']==1)continue;    
+            <?php foreach ($desarrollo as $key => $item) {
+                if ($item['data']['destacado'] == 1) continue;
             ?>
-            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-30">
-                <div class="process-item text-center">
-                    <div class="process-icon-area">
-                        <div class="process-element">
-                            <div class="process-number">
-                                <span><?= $item['data']['subtitulo']?></span>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 mb-30">
+                    <div class="process-item text-center">
+                        <div class="process-icon-area">
+                            <div class="process-element">
+                                <div class="process-number">
+                                    <span><?= $item['data']['subtitulo'] ?></span>
+                                </div>
+                                <div class="process-dot">
+                                    <span></span>
+                                </div>
                             </div>
-                            <div class="process-dot">
-                                <span></span>
+                            <div class="process-icon">
+                                <img src="<?= $item['images'][0]['url'] ?>" alt="icon">
                             </div>
                         </div>
-                        <div class="process-icon">
-                            <img src="<?= $item['images'][0]['url']?>" alt="icon">
+                        <div class="process-content">
+                            <h3 class="title"><?= $item['data']['titulo'] ?></h3>
                         </div>
-                    </div>
-                    <div class="process-content">
-                        <h3 class="title"><?= $item['data']['titulo']?></h3>
                     </div>
                 </div>
-            </div>
             <?php } ?>
-            
+
         </div>
     </div>
 </section>
