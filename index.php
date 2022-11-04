@@ -8,7 +8,6 @@ $config = new Clases\Config();
 $enviar = new Clases\Email();
 $emailData = $config->viewEmail();
 $template->themeInit();
-//<<---------------------LINEA 769 FALTA CAMBIAR UN LINK---------------->>
 $data_introduccion = [
     "filter" => ['contenidos.cod = "inicio-introduccion"']
 ];
@@ -64,7 +63,7 @@ $data_area_novedades = [
     "filter" => ['contenidos.area = "novedades_inicio"']
 
 ];
-var_dump(URL);
+// var_dump(URL);
 
 //cambiar las consultas de inicio para que sea una sola de area ----------------
 $contactar = $contenidos->list($data_contactar, 'es', true);
@@ -212,7 +211,6 @@ $slider = $contenidos->list($data_slider_inicio, 'es', true);
                     <h2 class="title"><?= $inicio_nosotros_somos['data']['titulo'] ?></h2>
                     <p><?= $inicio_nosotros_somos['data']['contenido'] ?></p>
                     <div class="statistics-left-btn">
-                        <!-- agregar el link -->
                         <a href="<?= URL ?>/empresa.php" class="custom-btn">Know More</a>
                     </div>
                 </div>
